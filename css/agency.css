@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Agency v4.1.1 (https://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2018 Start Bootstrap
+ * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
  */
 body {
@@ -124,6 +124,11 @@ img::-moz-selection {
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
   color: #fec503;
+}
+
+#mainNav .logo {
+  max-height: 7em;
+  margin: -1em 0 -2em -1em;
 }
 
 #mainNav .navbar-nav .nav-item .nav-link {

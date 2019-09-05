@@ -21,6 +21,10 @@
       color: darken($primary, 10%);
     }
   }
+  .logo {
+    max-height: 7em;
+    margin: -1em 0 -2em -1em;
+  }
   .navbar-nav {
     .nav-item {
       .nav-link {
