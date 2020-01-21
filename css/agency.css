@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Agency v4.1.1 (https://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2019 Start Bootstrap
+ * Copyright 2013-2020 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
  */
 body {
@@ -720,5 +720,25 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 }
 
 .client-logo p {
+  margin-top: 0;
+}
+
+.client-logo-square {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.client-logo-square img {
+  width: 150px;
+  border: 7px solid #fff;
+}
+
+.client-logo-square h4 {
+  margin-top: 25px;
+  margin-bottom: 0;
+  text-transform: none;
+}
+
+.client-logo-square p {
   margin-top: 0;
 }
