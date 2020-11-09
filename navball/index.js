@@ -3,8 +3,7 @@ window.onload = () => {
   document.getElementById("start").addEventListener('click', () => {
     document.getElementById("start").style.display = "none"
     let camera = render()
-    camera.lookAt(new THREE.Vector3(0, 0, 0));
-    camera.rotation.x =  THREE.MathUtils.degToRad(0) // 仰角・俯角
+    camera.rotation.x = THREE.MathUtils.degToRad(0) // 仰角・俯角
     camera.rotation.y = THREE.MathUtils.degToRad(90) // 方位
     camera.rotation.z = THREE.MathUtils.degToRad(0)  // ねじれ
 
@@ -71,9 +70,9 @@ function setDeviceOrientationEvent(camera) {
   // 許可を得られた場合、deviceorientationをイベントリスナーに追加
   window.addEventListener('deviceorientation', e => {
     e.preventDefault()
-    camera.rotation.x =  THREE.MathUtils.degToRad(e.gamma) // 仰角・俯角
-    camera.rotation.y = THREE.MathUtils.degToRad(e.alpha) // 方位
-    camera.rotation.z = THREE.MathUtils.degToRad(e.beta)  // ねじれ
+    camera.rotation.x = THREE.MathUtils.degToRad(e.alpha) // 仰角・俯角
+    camera.rotation.y = THREE.MathUtils.degToRad(e.beta) // 方位
+    camera.rotation.z = THREE.MathUtils.degToRad(e.gamma)  // ねじれ
   })
 }
 
