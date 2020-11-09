@@ -1,5 +1,8 @@
 window.onload = () => {
   document.getElementById("start").addEventListener('click', () => {
+    document.getElementById("start").style.display = "none"
+    let navball = document.getElementById("navball")
+    navball.style.display = "block"
     if (typeof DeviceOrientationEvent !== "undefined") {
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
         // iOS 13+ の Safari
@@ -28,9 +31,6 @@ function setDeviceOrientationEvent() {
   // 許可を得られた場合、deviceorientationをイベントリスナーに追加
   window.addEventListener('deviceorientation', e => {
     e.preventDefault()
-    window.getElementById("start").style.display("none")
-    let navball = window.getElementById("navball")
-    navball.style.display("block")
     navball.innerHtml = "方位: "+ compassHeading(e.alpha, e.beta, e.gamma) + "<br />"
       + "beta: " + e.beta  + +"<br />"
       + "gamma: " + e.gamma  + +"<br />"
