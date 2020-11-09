@@ -71,7 +71,7 @@ function setDeviceOrientationEvent(camera) {
   window.addEventListener('deviceorientation', e => {
     e.preventDefault()
     camera.rotation.x = THREE.MathUtils.degToRad(e.beta) // 仰角・俯角
-    camera.rotation.y = THREE.MathUtils.degToRad(00 - e.alpha) // 方位
+    camera.rotation.y = THREE.MathUtils.degToRad(e.alpha) // 方位
     camera.rotation.z = THREE.MathUtils.degToRad(e.gamma)  // ねじれ
   })
 }
