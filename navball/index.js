@@ -1,10 +1,13 @@
 window.onload = () => {
+  // この辺りはこちらを参考に https://qiita.com/umi_kappa/items/38499c03792b2aac49ad
   document.getElementById("start").addEventListener('click', () => {
     document.getElementById("start").style.display = "none"
-    let navball = document.getElementById("navball")
-    navball.innerHTML = "方位: "+ compassHeading(0, 0, 0) + "<br />"
-      + "beta: " + 0  + "<br />"
-      + "gamma: " + 0  + "<br />"
+    let camera = render()
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    camera.rotation.x =  THREE.MathUtils.degToRad(0) // 仰角・俯角
+    camera.rotation.y = THREE.MathUtils.degToRad(90) // 方位
+    camera.rotation.z = THREE.MathUtils.degToRad(0)  // ねじれ
+
     if (typeof DeviceOrientationEvent !== "undefined") {
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
         // iOS 13+ の Safari
@@ -12,7 +15,7 @@ window.onload = () => {
         DeviceOrientationEvent.requestPermission()
           .then(permissionState => {
             if (permissionState === 'granted') {
-              setDeviceOrientationEvent()
+              setDeviceOrientationEvent(camera)
             } else {
               // 許可を得られなかった場合の処理
               alert("センサへのアクセスが拒否されました。もう一度やり直してください。")
@@ -21,7 +24,7 @@ window.onload = () => {
           .catch(err => alert("センサ情報が取得できませんでした。" + err.toString())) // https通信でない場合などで許可を取得できなかった場合
       } else {
         // 上記以外のブラウザ
-        setDeviceOrientationEvent()
+        setDeviceOrientationEvent(camera)
       }
     } else {
       alert("このデバイスには地磁気センサがありません")
@@ -29,13 +32,48 @@ window.onload = () => {
   }, false)
 };
 
-function setDeviceOrientationEvent() {
+function render() {
+  // この辺りはこちらを参考 https://ics.media/entry/14490/
+  let width = window.innerWidth
+  let height = window.innerHeight
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(75, width / height, 1, 1000);
+  camera.position.set(0, 0, 0);
+  scene.add(camera);
+
+  var geometry = new THREE.SphereGeometry(5, 60, 40);
+  geometry.scale(-1, 1, 1);
+	//　マテリアルの作成
+	// 画像はこちらのをお借りしました
+	// https://forum.kerbalspaceprogram.com/index.php?/topic/164158-13-navballtexturechanger-v16-8717/
+  let texture = new THREE.TextureLoader().load("/img/navball.png")
+	let material = new THREE.MeshBasicMaterial({
+		map: texture
+	});
+	sphere = new THREE.Mesh(geometry, material);
+	scene.add(sphere);
+
+	// レンダラー
+	renderer = new THREE.WebGLRenderer({antialias: true});
+	renderer.setSize(width, height);
+	renderer.setClearColor({color: 0xffccff});
+	element = renderer.domElement;
+	document.getElementById("navball").appendChild(element);
+  function r() {
+    requestAnimationFrame(r)
+    renderer.render(scene, camera)
+  }
+  requestAnimationFrame(r)
+  return camera
+}
+
+function setDeviceOrientationEvent(camera) {
   // 許可を得られた場合、deviceorientationをイベントリスナーに追加
   window.addEventListener('deviceorientation', e => {
     e.preventDefault()
-    navball.innerHTML = "方位: "+ compassHeading(e.alpha, e.beta, e.gamma) + "<br />"
-      + "beta: " + e.beta  + "<br />"
-      + "gamma: " + e.gamma  + "<br />"
+    camera.rotation.x =  THREE.MathUtils.degToRad(e.beta) // 仰角・俯角
+    camera.rotation.y = THREE.MathUtils.degToRad(compassHeading(e.alpha, e.beta, e.gamma) + 90) // 方位
+    camera.rotation.z = THREE.MathUtils.degToRad(e.gamma)  // ねじれ
   })
 }
 
