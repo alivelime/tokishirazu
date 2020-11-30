@@ -3,9 +3,10 @@ window.onload = () => {
   document.getElementById("start").addEventListener('click', () => {
     document.getElementById("start").style.display = "none"
     let camera = render()
-    camera.rotation.x = THREE.MathUtils.degToRad(0) // 仰角・俯角
-    camera.rotation.y = THREE.MathUtils.degToRad(90) // 方位
-    camera.rotation.z = THREE.MathUtils.degToRad(0)  // ねじれ
+    // camera.rotation.x = THREE.MathUtils.degToRad(0) // 仰角・俯角
+    // camera.rotation.y = THREE.MathUtils.degToRad(90) // 方位
+    // camera.rotation.z = THREE.MathUtils.degToRad(0)  // ねじれ
+    camera.useQuaternion = true;
 
     if (typeof DeviceOrientationEvent !== "undefined") {
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
@@ -70,10 +71,35 @@ function setDeviceOrientationEvent(camera) {
   // 許可を得られた場合、deviceorientationをイベントリスナーに追加
   window.addEventListener('deviceorientation', e => {
     e.preventDefault()
-    camera.rotation.x = THREE.MathUtils.degToRad(e.beta) // 仰角・俯角
-    camera.rotation.y = THREE.MathUtils.degToRad(e.alpha) // 方位
-    camera.rotation.z = THREE.MathUtils.degToRad(e.gamma)  // ねじれ
+    camera.quaternion = new THREE.Quaternion().setFromAxisAngle( new THREE.Vector3(1,0,0),Math.PI / 2)
+    camera.quaternion.copy(new THREE.Quaternion(getQuaternion(e.alpha, e.beta, e.gamma)));
+    // camera.rotation.x = THREE.MathUtils.degToRad(e.beta) // 仰角・俯角
+    // camera.rotation.y = THREE.MathUtils.degToRad(e.alpha) // 方位
+    // camera.rotation.z = THREE.MathUtils.degToRad(e.gamma)  // ねじれ
   })
+}
+
+function getQuaternion( alpha, beta, gamma ) {
+
+  var _x = beta  ? beta  * degtorad : 0; // β 値
+  var _y = gamma ? gamma * degtorad : 0; // γ 値
+  var _z = alpha ? alpha * degtorad : 0; // α 値
+
+  var cX = Math.cos( _x/2 );
+  var cY = Math.cos( _y/2 );
+  var cZ = Math.cos( _z/2 );
+  var sX = Math.sin( _x/2 );
+  var sY = Math.sin( _y/2 );
+  var sZ = Math.sin( _z/2 );
+
+  /*  ZXY 四元数の構築  */
+
+  var w = cX * cY * cZ - sX * sY * sZ;
+  var x = sX * cY * cZ - cX * sY * sZ;
+  var y = cX * sY * cZ + sX * cY * sZ;
+  var z = cX * cY * sZ + sX * sY * cZ;
+
+  return [ w, x, y, z ];
 }
 
 function compassHeading(alpha, beta, gamma) {
