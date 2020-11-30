@@ -7,9 +7,9 @@ window.onload = () => {
     // camera.rotation.y = THREE.MathUtils.degToRad(90) // 方位
     // camera.rotation.z = THREE.MathUtils.degToRad(0)  // ねじれ
 
-    // var qa = getQuaternion(30, 60, 10);
-    // var q = new THREE.Quaternion(qa[0], qa[1], qa[2], qa[3]);
-    // camera.quaternion.copy(q);
+    var qa = getQuaternion(-30, 180, 90); // 仰角・傾き(180)・方位
+     var q = new THREE.Quaternion(qa[0], qa[1], qa[2], qa[3]);
+     camera.quaternion.copy(q);
 
     if (typeof DeviceOrientationEvent !== "undefined") {
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
@@ -74,7 +74,7 @@ function setDeviceOrientationEvent(camera) {
   // 許可を得られた場合、deviceorientationをイベントリスナーに追加
   window.addEventListener('deviceorientation', e => {
     e.preventDefault()
-    var qa = getQuaternion(e.alpha, e.beta, e.gamma);
+    var qa = getQuaternion(e.beta, e.gamma, e.alpha);
     var q = new THREE.Quaternion(qa[0], qa[1], qa[2], qa[3]);
     camera.quaternion.copy(q);
     
