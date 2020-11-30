@@ -6,7 +6,7 @@ window.onload = () => {
     // camera.rotation.x = THREE.MathUtils.degToRad(0) // 仰角・俯角
     // camera.rotation.y = THREE.MathUtils.degToRad(90) // 方位
     // camera.rotation.z = THREE.MathUtils.degToRad(0)  // ねじれ
-    camera.useQuaternion = true;
+    // camera.useQuaternion = true;
 
     if (typeof DeviceOrientationEvent !== "undefined") {
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
@@ -71,11 +71,11 @@ function setDeviceOrientationEvent(camera) {
   // 許可を得られた場合、deviceorientationをイベントリスナーに追加
   window.addEventListener('deviceorientation', e => {
     e.preventDefault()
-    camera.quaternion = new THREE.Quaternion().setFromAxisAngle( new THREE.Vector3(1,0,0),Math.PI / 2)
-    camera.quaternion.copy(new THREE.Quaternion(getQuaternion(e.alpha, e.beta, e.gamma)));
-    // camera.rotation.x = THREE.MathUtils.degToRad(e.beta) // 仰角・俯角
-    // camera.rotation.y = THREE.MathUtils.degToRad(e.alpha) // 方位
-    // camera.rotation.z = THREE.MathUtils.degToRad(e.gamma)  // ねじれ
+    // camera.quaternion = new THREE.Quaternion().setFromAxisAngle( new THREE.Vector3(1,0,0),Math.PI / 2)
+    // camera.quaternion.copy(new THREE.Quaternion(getQuaternion(e.alpha, e.beta, e.gamma)));
+     camera.rotation.x = THREE.MathUtils.degToRad(e.beta) // 仰角・俯角
+     camera.rotation.y = THREE.MathUtils.degToRad(e.alpha + 180) // 方位
+     camera.rotation.z = THREE.MathUtils.degToRad(e.gamma)  // ねじれ
   })
 }
 
