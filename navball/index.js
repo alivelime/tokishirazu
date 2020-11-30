@@ -9,7 +9,7 @@ window.onload = () => {
 
     // var qa = getQuaternion(30, 60, 10);
     // var q = new THREE.Quaternion(qa[0], qa[1], qa[2], qa[3]);
-    // camera.applyQuaternion(q);
+    // camera.quaternion.copy(q);
 
     if (typeof DeviceOrientationEvent !== "undefined") {
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
@@ -76,7 +76,7 @@ function setDeviceOrientationEvent(camera) {
     e.preventDefault()
     var qa = getQuaternion(e.alpha, e.beta, e.gamma);
     var q = new THREE.Quaternion(qa[0], qa[1], qa[2], qa[3]);
-    camera.applyQuaternion(q);
+    camera.quaternion.copy(q);
     
     // camera.quaternion = new THREE.Quaternion().setFromAxisAngle( new THREE.Vector3(1,0,0),Math.PI / 2)
     // camera.quaternion.copy(new THREE.Quaternion(getQuaternion(e.alpha, e.beta, e.gamma)));
