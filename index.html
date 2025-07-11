@@ -23,6 +23,268 @@
 
     <!-- Custom styles for this template -->
     <link href="css/agency.min.css" rel="stylesheet">
+    
+    <!-- Modern custom styles -->
+    <style>
+      :root {
+        --primary-color: #007bff;
+        --secondary-color: #6c757d;
+        --dark-color: #212529;
+        --light-color: #f8f9fa;
+        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+      
+      body {
+        font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+      }
+      
+      .masthead {
+        background: var(--gradient-primary);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .masthead::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.3);
+      }
+      
+      .intro-text {
+        position: relative;
+        z-index: 1;
+      }
+      
+      .intro-lead-in {
+        font-size: 1.5rem;
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      }
+      
+      section {
+        padding: 100px 0;
+      }
+      
+      section:nth-child(even) {
+        background-color: var(--light-color);
+      }
+      
+      .section-heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+      
+      .section-heading::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--gradient-secondary);
+        border-radius: 2px;
+      }
+      
+      h5.section-subheading li {
+        margin: 10px 0;
+        padding: 15px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+      }
+      
+      h5.section-subheading li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      }
+      
+      .service-heading {
+        margin: 20px 0;
+        font-size: 1.4rem;
+      }
+      
+      .fa-stack {
+        transition: transform 0.3s ease;
+      }
+      
+      .col-md-4:hover .fa-stack {
+        transform: scale(1.1);
+      }
+      
+      .text-primary {
+        color: var(--primary-color) !important;
+      }
+      
+      .team-member {
+        text-align: center;
+        margin-bottom: 50px;
+        transition: transform 0.3s ease;
+      }
+      
+      .team-member:hover {
+        transform: translateY(-5px);
+      }
+      
+      .team-member img {
+        width: 200px;
+        height: 200px;
+        border: 7px solid #f8f9fa;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .team-member:hover img {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+      
+      .social-buttons li a {
+        background: var(--gradient-primary);
+        color: white;
+        transition: all 0.3s ease;
+      }
+      
+      .social-buttons li a:hover {
+        background: var(--gradient-secondary);
+        transform: translateY(-3px);
+      }
+      
+      .navbar {
+        background: rgba(33, 37, 41, 0.95) !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      
+      .navbar-brand {
+        font-weight: 700;
+        font-size: 1.5rem;
+      }
+      
+      .nav-link {
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        color: #667eea !important;
+      }
+      
+      footer {
+        padding: 40px 0;
+      }
+      
+      footer .copyright {
+        color: #6c757d;
+      }
+      
+      footer .social-buttons li a {
+        background: #212529;
+        color: white;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+      
+      footer .social-buttons li a:hover {
+        background: var(--gradient-primary);
+        transform: translateY(-3px);
+      }
+      
+      .bachan-ss {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .bachan-ss:hover {
+        transform: scale(1.05);
+      }
+      
+      .icon-box img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 20px 0;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .icon-box:hover img {
+        transform: scale(1.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+      
+      blockquote.twitter-tweet {
+        margin: 20px auto !important;
+      }
+      
+      .achievement-list {
+        list-style: none;
+        padding-left: 0;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #6c757d;
+      }
+      
+      .achievement-list li {
+        position: relative;
+        padding-left: 2em;
+        margin: 10px 0;
+        padding: 15px;
+        padding-left: 2em;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+      }
+      
+      .achievement-list li:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      }
+      
+      .achievement-list li::before {
+        content: "•";
+        position: absolute;
+        left: 15px;
+      }
+      
+      .achievement-year {
+        display: inline-block;
+        min-width: 4em;
+      }
+      
+      .achievement-content {
+        display: inline-block;
+        vertical-align: top;
+      }
+      
+      @media (max-width: 768px) {
+        .intro-lead-in {
+          font-size: 1.2rem;
+        }
+        
+        .section-heading {
+          font-size: 2rem;
+        }
+      }
+    </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122399129-3"></script>
@@ -87,14 +349,14 @@
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">開発実績</h2>
             <hr />
-            <h5 class="section-subheading text-muted" style="text-align: left">
-              <li>2024 : AIを活用した音声チャットの開発など</li>
-              <li>2024.2 : 日本放送協会様 WebTransportを活用したボリュメトリックプレイヤーの開発</li>
-              <li>2023 :<a href="https://www.mic9.co.jp/news/%E7%B4%84%EF%BC%98%E4%B8%87%E4%BA%BA%E6%9D%A5%E5%A0%B4%E3%81%AE%E4%B8%AD%E4%BA%AC%E3%83%86%E3%83%AC%E3%83%93%E3%80%8C24%E6%99%82%E9%96%93%E3%83%86%E3%83%AC%E3%83%93%E3%80%8D%E3%83%A1%E3%82%BF%E3%83%90/">株式会社ミックナイン様</>  <a href="https://prtimes.jp/main/html/rd/p/000000256.000039863.html">24時間テレビメタバース会場</a> 8万人が来場し50時間近いライブ配信のシステム開発(Agora利用)</li>
-              <li>2022: 株式会社Jストリーム様、WebTransportを用いた超低遅延動画配信基盤の開発</li>
-              <li>2021: WebRTCを用いたウェビナーサービス様の改善と負荷試験</li>
-              <li>2019: Webシステムのバックエンド開発など</li>
-            </h5>
+            <ul class="achievement-list" style="text-align: left">
+              <li><span class="achievement-year">2025 : </span><span class="achievement-content">動画生成AIエージェントの開発<br />キャラクターとのリアルタイムAIチャット開発</span></li>
+              <li><span class="achievement-year">2024 : </span><span class="achievement-content">日本放送協会様 WebTransportを活用したボリュメトリックプレイヤーの開発<br />AIを活用した3Dアバターの開発</span></li>
+              <li><span class="achievement-year">2023 : </span><span class="achievement-content"><a href="https://www.mic9.co.jp/news/%E7%B4%84%EF%BC%98%E4%B8%87%E4%BA%BA%E6%9D%A5%E5%A0%B4%E3%81%AE%E4%B8%AD%E4%BA%AC%E3%83%86%E3%83%AC%E3%83%93%E3%80%8C24%E6%99%82%E9%96%93%E3%83%86%E3%83%AC%E3%83%93%E3%80%8D%E3%83%A1%E3%82%BF%E3%83%90/">株式会社ミックナイン様</a>  <a href="https://prtimes.jp/main/html/rd/p/000000256.000039863.html">24時間テレビメタバース会場</a><br />8万人が来場し50時間近いライブ配信のシステム開発(Agora利用)</span></li>
+              <li><span class="achievement-year">2022 : </span><span class="achievement-content">株式会社Jストリーム様、WebTransportを用いた超低遅延動画配信基盤の開発</span></li>
+              <li><span class="achievement-year">2021 : </span><span class="achievement-content">WebRTCを用いたウェビナーサービス様の改善と負荷試験</span></li>
+              <li><span class="achievement-year">2019 : </span><span class="achievement-content">Webシステムのバックエンド開発など</span></li>
+            </ul>
           </div>
         </div>
       </div>
