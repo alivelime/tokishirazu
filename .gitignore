@@ -67,3 +67,8 @@ typings/
 # 参照用に old/ にディスク保存するが、未使用かつ Dependabot アラートの元凶なので非追跡にする
 old/package.json
 old/package-lock.json
+
+# Playwright MCP の検証用スナップショット/スクリーンショット（コミット不要）
+.playwright-mcp/
+/*.jpeg
+/*.png
