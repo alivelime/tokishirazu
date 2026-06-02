@@ -1,610 +1,205 @@
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>合同会社ときしらず｜先端技術の開発と、中小企業向けの実務メディア</title>
+  <meta name="description" content="合同会社ときしらず（tokishirazu.llc）の公式サイト。WebTransportやAIなど先端領域の受託開発と、中小企業の現場で使える情報メディアを運営しています。">
+  <link rel="canonical" href="https://www.tokishirazu.llc/">
+  <meta name="google-site-verification" content="OO0aOj4eu1PyNChRtH2GlnQR1BNzZrjvZrpshTTgTGk" />
 
-  <head>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="合同会社ときしらず">
+  <meta property="og:title" content="合同会社ときしらず｜先端技術の開発と、中小企業向けの実務メディア">
+  <meta property="og:description" content="WebTransportやAIなど先端領域の受託開発と、中小企業の現場で使える情報メディアを運営しています。">
+  <meta property="og:url" content="https://www.tokishirazu.llc/">
+  <meta property="og:image" content="https://www.tokishirazu.llc/img/header-bg.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta name="google-site-verification" content="OO0aOj4eu1PyNChRtH2GlnQR1BNzZrjvZrpshTTgTGk" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="icon" href="/img/logo02.svg" type="image/svg+xml">
+  <script src="/assets/js/analytics.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へスキップ</a>
 
-    <title>合同会社ときしらず tokishirazu.llc</title>
+  <header class="site-header">
+    <nav class="site-nav container" aria-label="メインナビゲーション">
+      <a class="brand" href="/">
+        <img src="/img/logo02.svg" alt="" aria-hidden="true">
+        <span>合同会社ときしらず<small>TOKISHIRAZU LLC</small></span>
+      </a>
+      <button class="nav-toggle" aria-label="メニューを開閉" aria-controls="nav-links" aria-expanded="false"><span></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#business">事業</a></li>
+        <li><a href="#works">実績</a></li>
+        <li><a href="/media/">メディア</a></li>
+        <li><a href="/company/">会社概要</a></li>
+        <li><a href="/contact/" class="btn btn--primary">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <main id="main">
 
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <span class="eyebrow">合同会社ときしらず</span>
+        <h1>最新技術を、現場で使える形に。</h1>
+        <p class="lead">
+          WebTransport による次世代動画配信や生成AIの実装で培った知見を、受託開発と情報メディアの両輪で届けます。
+          中小企業が新しい技術を取り入れるときの「次の一歩」を、技術者の目線で支えます。
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--primary btn--lg" href="/media/">メディアを読む</a>
+          <a class="btn btn--ghost btn--lg" href="/contact/">開発のご相談</a>
+        </div>
+      </div>
+    </section>
 
-    <!-- Custom styles for this template -->
-    <link href="css/agency.min.css" rel="stylesheet">
-    
-    <!-- Modern custom styles -->
-    <style>
-      :root {
-        --primary-color: #007bff;
-        --secondary-color: #6c757d;
-        --dark-color: #212529;
-        --light-color: #f8f9fa;
-        --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      }
-      
-      body {
-        font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-      }
-      
-      .masthead {
-        background: var(--gradient-primary);
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .masthead::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.3);
-      }
-      
-      .intro-text {
-        position: relative;
-        z-index: 1;
-      }
-      
-      .intro-lead-in {
-        font-size: 1.5rem;
-        font-weight: 300;
-        line-height: 1.5;
-        margin-bottom: 2rem;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-      }
-      
-      section {
-        padding: 100px 0;
-      }
-      
-      section:nth-child(even) {
-        background-color: var(--light-color);
-      }
-      
-      .section-heading {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        position: relative;
-        display: inline-block;
-      }
-      
-      .section-heading::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: var(--gradient-secondary);
-        border-radius: 2px;
-      }
-      
-      h5.section-subheading li {
-        margin: 10px 0;
-        padding: 15px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
-      }
-      
-      h5.section-subheading li:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-      }
-      
-      .service-heading {
-        margin: 20px 0;
-        font-size: 1.4rem;
-      }
-      
-      .fa-stack {
-        transition: transform 0.3s ease;
-      }
-      
-      .col-md-4:hover .fa-stack {
-        transform: scale(1.1);
-      }
-      
-      .text-primary {
-        color: var(--primary-color) !important;
-      }
-      
-      .team-member {
-        text-align: center;
-        margin-bottom: 50px;
-        transition: transform 0.3s ease;
-      }
-      
-      .team-member:hover {
-        transform: translateY(-5px);
-      }
-      
-      .team-member img {
-        width: 200px;
-        height: 200px;
-        border: 7px solid #f8f9fa;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-      }
-      
-      .team-member:hover img {
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      }
-      
-      .social-buttons li a {
-        background: var(--gradient-primary);
-        color: white;
-        transition: all 0.3s ease;
-      }
-      
-      .social-buttons li a:hover {
-        background: var(--gradient-secondary);
-        transform: translateY(-3px);
-      }
-      
-      .navbar {
-        background: rgba(33, 37, 41, 0.95) !important;
-        backdrop-filter: blur(10px);
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      }
-      
-      .navbar-brand {
-        font-weight: 700;
-        font-size: 1.5rem;
-      }
-      
-      .nav-link {
-        font-weight: 600;
-        transition: color 0.3s ease;
-      }
-      
-      .nav-link:hover {
-        color: #667eea !important;
-      }
-      
-      footer {
-        padding: 40px 0;
-      }
-      
-      footer .copyright {
-        color: #6c757d;
-      }
-      
-      footer .social-buttons li a {
-        background: #212529;
-        color: white;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-      }
-      
-      footer .social-buttons li a:hover {
-        background: var(--gradient-primary);
-        transform: translateY(-3px);
-      }
-      
-      .bachan-ss {
-        width: 100%;
-        border-radius: 8px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-      }
-      
-      .bachan-ss:hover {
-        transform: scale(1.05);
-      }
-      
-      .icon-box img {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin: 20px 0;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        transition: all 0.3s ease;
-      }
-      
-      .icon-box:hover img {
-        transform: scale(1.1);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      }
-      
-      blockquote.twitter-tweet {
-        margin: 20px auto !important;
-      }
-      
-      .achievement-list {
-        list-style: none;
-        padding-left: 0;
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #6c757d;
-      }
-      
-      .achievement-list li {
-        position: relative;
-        padding-left: 2em;
-        margin: 10px 0;
-        padding: 15px;
-        padding-left: 2em;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
-      }
-      
-      .achievement-list li:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-      }
-      
-      .achievement-list li::before {
-        content: "•";
-        position: absolute;
-        left: 15px;
-      }
-      
-      .achievement-year {
-        display: inline-block;
-        min-width: 4em;
-      }
-      
-      .achievement-content {
-        display: inline-block;
-        vertical-align: top;
-      }
-      
-      @media (max-width: 768px) {
-        .intro-lead-in {
-          font-size: 1.2rem;
-        }
-        
-        .section-heading {
-          font-size: 2rem;
-        }
-      }
-    </style>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122399129-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-122399129-3');
-    </script>
-
-  </head>
-
-  <body id="page-top">
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <!-- 事業概要 -->
+    <section class="section" id="business">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">合同会社</a>
-        <span><img class="logo" src="img/logo02.svg" alt="ときしらず"></span>
-        </a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#concepts">Concept</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#team">Team</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#profile">Pfofile</a>
-            </li>
+        <div class="section__head center">
+          <span class="eyebrow">Business</span>
+          <h2>事業内容</h2>
+          <p class="lead muted">“セカンドペンギン戦略” ― 実用段階に至った先端技術を、いち早く現場へ。</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="card__icon">PoC</div>
+            <h3>PoCラボサービス</h3>
+            <p class="muted">気になる技術や機能はあるのに、忙しくて検証が進まない。先端技術を使った技術検証を代行します。要件が固まっていなくても構いません。</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">CS</div>
+            <h3>技術コンサルティング</h3>
+            <p class="muted">「取り入れたいけど進まない」「開発会社を早さや安さで選んで後悔したくない」。業界歴15年超の現役エンジニアが、導入判断と落とし穴の回避を支援します。</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">▶</div>
+            <h3>リアルタイム動画配信</h3>
+            <p class="muted">WebTransport を活用した次世代動画配信システムの開発。アプリ不要で手軽にスケールする配信基盤を構築します。</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">AI</div>
+            <h3>生成AIの実装支援</h3>
+            <p class="muted">動画生成AIエージェントやリアルタイムAIチャットなど、生成AIをプロダクトに組み込むための設計・開発を行います。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 開発実績 -->
+    <section class="section section--surface" id="works">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Track record</span>
+          <h2>開発実績</h2>
+          <p class="lead muted">先端領域での開発を継続的に手がけています。</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <span class="badge badge--accent">2025</span>
+            <h3 class="mt-0" style="margin-top:.8rem">生成AI領域</h3>
+            <ul class="muted">
+              <li>動画生成AIエージェントの開発</li>
+              <li>キャラクターとのリアルタイムAIチャットの開発</li>
+            </ul>
+          </div>
+          <div class="card">
+            <span class="badge badge--accent">2024</span>
+            <h3 class="mt-0" style="margin-top:.8rem">動画配信・3D領域</h3>
+            <ul class="muted">
+              <li>日本放送協会様：WebTransport を活用したボリュメトリックプレイヤーの開発</li>
+              <li>AI を活用した3Dアバターの開発</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- メディア導線 -->
+    <section class="section" id="media-intro">
+      <div class="container">
+        <div class="grid grid-2" style="align-items:center; gap:2.4rem">
+          <div>
+            <span class="eyebrow">Media</span>
+            <h2>中小企業のための、実務メディア</h2>
+            <p class="muted">
+              AI活用や動画広告の内製化など、中小企業の現場で実際に役立つテーマを、技術者の視点で掘り下げます。
+              特定の製品を売り込むのではなく、判断に必要な事実と考え方を整理してお届けします。
+            </p>
+            <div class="btn-row">
+              <a class="btn btn--primary" href="/media/">メディアを見る</a>
+              <a class="btn btn--ghost" href="/media/articles/video-ad-inhouse-guide/">最新記事を読む</a>
+            </div>
+          </div>
+          <a class="card card--link" href="/media/articles/video-ad-inhouse-guide/">
+            <span class="badge">入門ガイド</span>
+            <h3 class="mt-0" style="margin-top:.8rem">中小企業のための動画広告 内製化入門</h3>
+            <p class="muted">外注に頼り切らず、AIを使って“動画を作れる体制”を社内につくるための最初の一歩を整理しました。</p>
+            <p class="muted" style="color:var(--accent-ink); font-weight:700">記事を読む →</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 会社概要サマリ -->
+    <section class="section section--surface" id="company-cta">
+      <div class="container narrow center">
+        <span class="eyebrow">Company</span>
+        <h2>法人として運営しています</h2>
+        <p class="lead muted">
+          合同会社ときしらずは、2018年に設立した東京都目黒区の法人です。
+          先端技術の開発と、その知見を活かした情報発信を行っています。
+        </p>
+        <div class="btn-row" style="justify-content:center">
+          <a class="btn btn--ghost btn--lg" href="/company/">会社概要を見る</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/">
+            <img src="/img/logo02.svg" alt="" aria-hidden="true">
+            <span>合同会社ときしらず<small>TOKISHIRAZU LLC</small></span>
+          </a>
+          <p class="mt-0" style="margin-top:1rem; max-width:34ch">最新技術の実装力と、中小企業の現場で使える情報発信。</p>
+        </div>
+        <div>
+          <h5>サイト</h5>
+          <ul>
+            <li><a href="/">ホーム</a></li>
+            <li><a href="/media/">メディア</a></li>
+            <li><a href="/company/">会社概要</a></li>
+            <li><a href="/contact/">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>方針</h5>
+          <ul>
+            <li><a href="/privacy/">プライバシーポリシー</a></li>
+            <li><a href="/disclosure/">広告掲載・PR表記方針</a></li>
           </ul>
         </div>
       </div>
-    </nav>
-
-    <!-- Header -->
-    <header class="masthead">
-      <div class="container">
-        <div class="intro-text">
-          <div class="intro-lead-in">"セカンドペンギン戦略"で<br />サービスを一歩前へ</div>
-          <!-- <div class="intro-heading text-uppercase">仕組みを知り、モノで語る</div> -->
-        </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> 合同会社ときしらず</span>
+        <span>東京都目黒区</span>
       </div>
-    </header>
+    </div>
+  </footer>
 
-    <!-- Services -->
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">開発実績</h2>
-            <hr />
-            <ul class="achievement-list" style="text-align: left">
-              <li><span class="achievement-year">2025 : </span><span class="achievement-content">動画生成AIエージェントの開発<br />キャラクターとのリアルタイムAIチャット開発</span></li>
-              <li><span class="achievement-year">2024 : </span><span class="achievement-content">日本放送協会様 WebTransportを活用したボリュメトリックプレイヤーの開発<br />AIを活用した3Dアバターの開発</span></li>
-              <li><span class="achievement-year">2023 : </span><span class="achievement-content"><a href="https://www.mic9.co.jp/news/%E7%B4%84%EF%BC%98%E4%B8%87%E4%BA%BA%E6%9D%A5%E5%A0%B4%E3%81%AE%E4%B8%AD%E4%BA%AC%E3%83%86%E3%83%AC%E3%83%93%E3%80%8C24%E6%99%82%E9%96%93%E3%83%86%E3%83%AC%E3%83%93%E3%80%8D%E3%83%A1%E3%82%BF%E3%83%90/">株式会社ミックナイン様</a>  <a href="https://prtimes.jp/main/html/rd/p/000000256.000039863.html">24時間テレビメタバース会場</a><br />8万人が来場し50時間近いライブ配信のシステム開発(Agora利用)</span></li>
-              <li><span class="achievement-year">2022 : </span><span class="achievement-content">株式会社Jストリーム様、WebTransportを用いた超低遅延動画配信基盤の開発</span></li>
-              <li><span class="achievement-year">2021 : </span><span class="achievement-content">WebRTCを用いたウェビナーサービス様の改善と負荷試験</span></li>
-              <li><span class="achievement-year">2019 : </span><span class="achievement-content">Webシステムのバックエンド開発など</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Services -->
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
-            <h5 class="section-subheading text-muted">
-              "セカンドペンギン戦略"<br />真っ先に海に飛び込んだペンギンから学び<br />実用段階に至った技術をいち早く取り込む
-            </h5>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-user-tie fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">PoCラボサービス</h4>
-            <p class="text-muted">
-              気になる技術や機能があるけど<br />みんな忙しくて検証が進まない!<br />
-              最先端の技術を使った検証します<br />
-              雑に投げていただいてOK<br />
-            </p>
-            <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">Unity + WebGLでトラッキングするために、こちらのネイティブMediaPipeを参考に、<br>新しいプロジェクトにてMediaPipeの手の固定データを反映させるところをひとまず進めてみた<br>参考元 <a href="https://t.co/G87JFd2ZKs">https://t.co/G87JFd2ZKs</a><br>VTuber需要多そうなのでいっそブラウザから直接動画配信するとかありかも <a href="https://t.co/lg3Ge3igv0">pic.twitter.com/lg3Ge3igv0</a></p>&mdash; alivelime (@purejapaneseonl) <a href="https://twitter.com/purejapaneseonl/status/1648141299013554178?ref_src=twsrc%5Etfw">April 18, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-user-tie fa-stack-1x fa-inverse"></i>
-            </span>
-            <h5 class="service-heading">エンジニア目線の確かなコンサル</h5>
-            <p class="text-muted" style="text-align: left">
-            使えそうで気になるあの技術、取り入れたいけど進まない<br />
-            やってみたのその次に、落とし穴がいろいろと<br />
-            開発会社を早さや安さでなんとなく選んで本当に後悔しませんか?<br />
-            そんな悩みを業界歴15年の現役エンジニアが解決します。<br />
-            </p>
-            <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">記事を投稿しました！ [GStreamer x Rust] gst-plugin-rs でも非同期処理がしたい! 〜 tcpsinkを作ってスケールさせる on <a href="https://twitter.com/hashtag/Qiita?src=hash&amp;ref_src=twsrc%5Etfw">#Qiita</a> <a href="https://t.co/qsT5kX2hlN">https://t.co/qsT5kX2hlN</a></p>&mdash; alivelime (@purejapaneseonl) <a href="https://twitter.com/purejapaneseonl/status/1654846864645292033?ref_src=twsrc%5Etfw">May 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">
-              リアルタイム動画配信
-            </h4>
-            <p class="text-muted">WebTransportを活用した<br />次世代動画配信システムの開発<br />アプリ不要で手軽にスケール</p>
-            <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">1920 x 1080 h264 30fps 5Mbps + AAC<br>OBSからSRTで打ち上げてgstreamerで再エンコしてWar(WebTransport)でChrome複数タブで視聴するとこまで遅延は1秒ちょい<br><br>映像が詰まった時はスキップ、音声のみモードもつけてみた<br>2時間流してても音飛びやズレは少ないけど回線と時計の影響が大きい <a href="https://t.co/kkVwFUop6B">pic.twitter.com/kkVwFUop6B</a></p>&mdash; alivelime (@purejapaneseonl) <a href="https://twitter.com/purejapaneseonl/status/1568946172831866881?ref_src=twsrc%5Etfw">September 11, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          </div>
-          <div class="col-md-4">
-            <div class="icon-box">
-              <a href="https://lin.ee/MkUNjzvh">
-                <img src="img/minarai.png"/>
-              </a>
-            </div>
-            <h4 class="service-heading">
-              <a href="https://lin.ee/MkUNjzvh">
-                ききなす・もてなす(仮)
-              </a>
-            </h4>
-            <p class="text-muted">人の話をちゃんと聞くAI chat<br />構文解析による掛結びから糸を推測します<br />「チョコアイスはないけど、抹茶アイスならあるよ」</p>
-          </div>
-          <div class="col-md-4">
-            <div class="icon-box">
-              <a href="https://qiita.com/alivelime/items/49a4b1bf8297a663e7c7">
-                <img src="https://www.fdma.go.jp/publication/materials/img/materials008_14_tekiseiriyou_s.jpg"/>
-              </a>
-            </div>
-            <h4 class="service-heading">
-              <a href="https://qiita.com/alivelime/items/49a4b1bf8297a663e7c7">
-                救急相談どこ?
-              </a>
-            </h4>
-            <p class="text-muted">#7119は全国対応ではない!小児は別番号!<br />現在位置から救急相談番号がわかるLINE Botです</p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-              <i class="fa fa-thumbs-up fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading"><a href="https://influs.link">インフルず</a></h4>
-            <p class="text-muted">私のおすすめまとめ<br />オススメまとめSNS</p>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <a href="img/bachan01.jpg">
-              <img class="bachan-ss" src="img/bachan01.jpg" />
-            </a>
-          </div>
-          <div class="col-md-4">
-            <a href="https://qiita.com/alivelime/items/49a4b1bf8297a663e7c7">
-              <img class="bachan-ss" src="https://raw.githubusercontent.com/tokishirazu-llc/qq_sodan_doko/master/images/ss_01.jpeg" />
-            </a>
-          </div>
-          <div class="col-md-4">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Team -->
-    <section id="team">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">役員</h2>
-            <h3 class="section-subheading text-muted">常識に囚われず自由に生きる</h3>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/eto.jpg" alt="">
-              <h4>Shingo Eto</h4>
-              <p class="text-muted">CEO / Engineer</p>
-              <p class="text-muted">大手で培った技術力を活かし<br />最先端のWeb開発を行っています</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="https://twitter.com/purejapaneseonl">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://www.facebook.com/people/Shingo-Eto/100009973449056">
-                    <i class="fab fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://github.com/alivelime">
-                    <i class="fab fa-github"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="https://qiita.com/alivelime">
-                    <span>Q</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/iguchi.jpg" alt="">
-              <h4>Misuzu Iguchi</h4>
-              <p class="text-muted">COO / Manager</p>
-              <p class="text-muted"><a href="https://neccos.jp/">株式会社ネッコス 代表</a></p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="https://www.facebook.com/misuzu.takatsu">
-                    <i class="fab fa-facebook"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/aoki.jpg" alt="">
-              <h4>Takashi Aoki</h4>
-              <p class="text-muted">multi coordinator</p>
-              <p class="text-muted"><a href="http://www.next-blue.com/">合同会社ネクストブルー 代表</a></p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="https://www.facebook.com/aoking33">
-                    <i class="fab fa-facebook"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="profile">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">お問い合わせ</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            大変お手数ですが、Qiitaのプロフィールページにあるメールアドレスからお問い合わせいただけます。<br />
-            プロトタイプの開発のご相談はもちろん、テキストベースであればエンジニア目線での確かな実現可能性・予算感・勘所のご相談も無料でお受けしております。<br />
-            (レベニューシェアや"情報交換"などの打合せはお受けしておりません)
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="profile">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">会社情報</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12">
-            <li>会社名 : 合同会社ときしらず</li>
-            <li>所在地 : 東京都目黒区目黒2-11-3 印刷工場1F</li>
-            <li>設立 : 2018年6月26日</li>
-            <li>代表 : 江藤 慎吾</li>
-            <li>事業内容 : 最新技術を活用したウェブシステムの研究開発・動画配信システム開発支援</li>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container bg-light">
-        <div class="row">
-          <div class="col-md-4">
-            <span class="copyright">Copyright &copy; tokishirazu.LLC 2022</span>
-          </div>
-          <div class="col-md-4">
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-          <i class="fab fa-twitter"></i>
-              </li>
-              <li class="list-inline-item">
-                <i class="fab fa-facebook"></i>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="js/agency.min.js"></script>
-  </body>
-
+  <script src="/assets/js/site.js" defer></script>
+</body>
 </html>
