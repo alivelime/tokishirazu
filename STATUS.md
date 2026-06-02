@@ -11,8 +11,9 @@
 
 ## 進行中
 
-- **ルート整理＋Dependabot対処済（未merge）**: 旧テーマ資産を `old/` へ退避、未使用の `package.json`/`package-lock.json` を非追跡化。ブランチ `chore/cleanup-root-and-deps`・コミット `ea06d9b`。**master へ merge/push すると Dependabot アラートが解消**（push は人間承認待ち）。
-- **次セッション: 内容のブラッシュアップ**（コピー・具体性・画像がプレースホルダ／一般論寄り）。手直しリスト → `docs/content-brushup-todo.md`。**ブランド/デザイン方針はユーザーが別途まとめる**。
+- **ルート整理＋Dependabot対処**: master へ merge 済（`6e00eda`、**未push**）。push で Dependabot アラート解消見込み。旧資産は `old/`。
+- **HPブランドブラッシュアップ（未merge）**: `docs/company-identity.md`（公開層の単一正本＝色/トーン/実績/連絡先）に沿って、デザインシステム(site.css)を和紙白・墨紺・熾火アンバー＋明朝見出し＋mono連番へ刷新。トップを「何をしてきたか/いま向かっている/何を頼めるか/メディア/会社」で再構成、会社概要のコピーも整合。ヒーローは代表撮影の水中写真。ブランチ `feature/hp-brand-brushup`（`7bcd553`,`d53ed7b`）。Playwright で主要ページ・コンソールエラー0を確認。
+- **次**: メディア/記事の深掘り、サンプルLPの解決策コピー、法務見直し、画像生成（`docs/image-tasks.md`）。手直しリスト `docs/content-brushup-todo.md`。
 
 ## ブロッカー / 保留
 

@@ -23,3 +23,6 @@
 - 次セッションの方針: 内容ブラッシュアップ（コピー/具体性/画像が一般論寄り）。手直しリストを `docs/content-brushup-todo.md` に作成、ミッション `2026-0602-content-brushup` を起票。
 - ルート整理（ブランチ `chore/cleanup-root-and-deps`、コミット `ea06d9b`）。旧 Start Bootstrap 資産（css/ js/ scss/ vendor/ mail/ gulpfile.js index.nginx-debian.html trim.py LICENSE）を `old/` へ git mv（新サイト未参照を grep で確認）。Dependabot アラート（全件 `package-lock.json` 由来＝axios/lodash/minimatch 等の旧 transitive 脆弱性）対処として、package.json/package-lock.json は `old/` にディスク保存しつつ git 追跡から外し `.gitignore` 追加。**master 反映後にアラート解消見込み**。未merge/未push（push は人間承認待ち）。
 - デザイン/コンセプトはユーザー側でまとめる方針（ブランド戦略の AI 提案は保留）。Vault 調査メモは本セッションのログのみ。
+- ルート整理ブランチを master へ ff merge（`6e00eda`、未push）。ユーザー指示: push は保留、`old/` は HP 完成後に削除予定。
+- ユーザーが `docs/company-identity.md`（公開層の単一正本: 芯=「深い水を自分の時間で光のさすほうへ昇る」、和紙白/墨/墨紺/淵ティール/熾火アンバーのパレット、配分規律、明朝見出し+mono、トーン&NG=決別宣言/内輪語/力み禁止、実績・連絡先）を作成。これを基準に AI がブランドデザイナー兼FEとしてHPをブラッシュアップ。
+- 実装（ブランチ `feature/hp-brand-brushup`）: site.css を全面刷新（新パレット・Shippori Mincho 見出し・IBM Plex Mono ラベル・写真ヒーロー hero--photo・section--dark・offering/record・絵文字アイコンと旧青#2b59ff/テックグラデ廃止）。index.html を identity のコピーで再構成、company の事業内容・代表プロフィール整合、全9ページのフォントリンク更新。コミット `7bcd553`(identity+gitignore)・`d53ed7b`(HP実装)。Playwright で /・/company/・記事・LP を表示確認、コンソールエラー0、配色/字組み確認。検証用スクショは gitignore 化して削除。未merge/未push。
