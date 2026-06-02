@@ -12,8 +12,8 @@
 ## 進行中
 
 - **ルート整理＋Dependabot対処**: master へ merge 済（`6e00eda`、**未push**）。push で Dependabot アラート解消見込み。旧資産は `old/`。
-- **HPブランドブラッシュアップ（未merge）**: `docs/company-identity.md`（公開層の単一正本＝色/トーン/実績/連絡先）に沿って、デザインシステム(site.css)を和紙白・墨紺・熾火アンバー＋明朝見出し＋mono連番へ刷新。トップを「何をしてきたか/いま向かっている/何を頼めるか/メディア/会社」で再構成、会社概要のコピーも整合。ヒーローは代表撮影の水中写真。ブランチ `feature/hp-brand-brushup`（`7bcd553`,`d53ed7b`）。Playwright で主要ページ・コンソールエラー0を確認。
-- **次**: メディア/記事の深掘り、サンプルLPの解決策コピー、法務見直し、画像生成（`docs/image-tasks.md`）。手直しリスト `docs/content-brushup-todo.md`。
+- **HPブランドブラッシュアップ（未merge）**: `docs/company-identity.md`（公開層の単一正本）に沿って実装。**第3稿で立場の芯=「足跡を干す後発開拓者」が確定**——詩で語らず足跡(具体物)で語る／メディア・受託は前面に出さない／やらないことは決別でなく線引き。デザインシステム(site.css)は和紙白・墨紺・熾火アンバー＋明朝見出し＋mono。トップは「いま歩いているフロンティア(生成AI映像)→これまでの足跡→ここで一緒にできること/やらないこと→会社」。メディアは非掲載化（ページは残置）。ブランチ `feature/hp-brand-brushup`（最新 `ba57908`）。Playwright 検証済(エラー0)。
+- **次**: 生成AI映像の足跡を"現物"で見せる強化（作品サムネ/リンク、movie_digest・gen_earth の公開URL）、サンプルLP・法務見直し、画像生成（`docs/image-tasks.md`）。手直しリスト `docs/content-brushup-todo.md`。
 
 ## ブロッカー / 保留
 
