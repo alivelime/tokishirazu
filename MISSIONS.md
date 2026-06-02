@@ -1,0 +1,18 @@
+# MISSIONS — 進行中ミッション台帳
+
+> **1 ミッション = 着手してからコミットして完了とするまでの一連の作業。**
+> SessionStart hook が `## active` の行を読み上げる。途中放置された作業を忘れない仕組み。
+>
+> 運用ルール:
+> - まとまった作業に**着手したら** `## active` に1行足す。
+> - 進捗で**書き換える**。
+> - **完了（コミット）したら** active から消し、`journal/missions_archive.md` の最上部に移す。
+> - `<id>` は `YYYY-MMDD-slug` 形式。
+
+## active
+
+- （アクティブなミッションなし。直近完了は `journal/missions_archive.md` 参照）
+
+<!-- 例:
+- **2026-0531-setup-harness** ハーネス初期化 — settings/hooks 設置済み、検証待ち
+-->
