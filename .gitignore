@@ -62,3 +62,8 @@ typings/
 
 # next.js build output
 .next
+
+# 旧テーマ(Start Bootstrap Agency)の依存マニフェスト
+# 参照用に old/ にディスク保存するが、未使用かつ Dependabot アラートの元凶なので非追跡にする
+old/package.json
+old/package-lock.json
