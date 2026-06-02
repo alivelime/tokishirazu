@@ -21,3 +21,5 @@
 - 内部ドキュメントの扱いをユーザーに確認 → 「公開をサブディレクトリに限定」を選択。公開ファイルを `public/` に集約（`git mv` 33件、コミット `df9f773`、**未push**）。ローカルで public/ をルート配信して全ページ200を確認。**有効化には Cloudflare の Build output directory=`public` 設定が必要**（人手）。設定→push の順で実施予定。設定後はルートの内部ドキュメントを git 管理下に置いても非公開。
 - ユーザーが Cloudflare の出力ディレクトリを `public` に設定し push 完了（origin/master=`d7af0b3`）。本番検証: トップ200・新ビルド、内部資料（media_site_plan/STATUS/CLAUDE/log/decisions/.claude）すべて404＝非公開、アセット200。公開構成 確定。
 - 次セッションの方針: 内容ブラッシュアップ（コピー/具体性/画像が一般論寄り）。手直しリストを `docs/content-brushup-todo.md` に作成、ミッション `2026-0602-content-brushup` を起票。
+- ルート整理（ブランチ `chore/cleanup-root-and-deps`、コミット `ea06d9b`）。旧 Start Bootstrap 資産（css/ js/ scss/ vendor/ mail/ gulpfile.js index.nginx-debian.html trim.py LICENSE）を `old/` へ git mv（新サイト未参照を grep で確認）。Dependabot アラート（全件 `package-lock.json` 由来＝axios/lodash/minimatch 等の旧 transitive 脆弱性）対処として、package.json/package-lock.json は `old/` にディスク保存しつつ git 追跡から外し `.gitignore` 追加。**master 反映後にアラート解消見込み**。未merge/未push（push は人間承認待ち）。
+- デザイン/コンセプトはユーザー側でまとめる方針（ブランド戦略の AI 提案は保留）。Vault 調査メモは本セッションのログのみ。

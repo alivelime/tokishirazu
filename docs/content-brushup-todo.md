@@ -33,6 +33,6 @@
 - [ ] 各ページの `og:image` を生成画像へ更新。
 
 ## 技術的後片付け（任意）
-- [ ] 旧テーマ資産の物理削除: ルートの `css/ js/ scss/ vendor/ gulpfile.js package.json package-lock.json mail/ index.nginx-debian.html`（新サイトは未参照）。
+- [x] 旧テーマ資産をルートから `old/` へ退避（`css/ js/ scss/ vendor/ mail/ gulpfile.js index.nginx-debian.html trim.py LICENSE`）。`package.json`/`package-lock.json` は非追跡で `old/` にディスク保存（Dependabot 対策）。ブランチ `chore/cleanup-root-and-deps`・コミット `ea06d9b`。※master 反映後にアラート解消。
 - [ ] `public/navball/` の旧UA（`UA-122399129-3`）を GA4 化 or 撤去を判断。
 - [ ] メタディスクリプション／構造化データ（Article 以外も）の精緻化。

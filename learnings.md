@@ -18,3 +18,10 @@
 - 状況: ハーネス設置時に `.claude/**` を deny に入れた
 - 失敗: hook を書き込む Write 自身が deny されて setup が詰む
 - ルール: `.claude/` 配下を deny に入れない。ハーネス自己改変は **CLAUDE.md のソフトルール**で縛る。破壊的コマンドのdenyだけ settings に置く。
+
+## L-002 — リニューアル時は旧資産を同じ変更で退避し、未使用の依存マニフェストを残さない
+
+- 出会った日: 2026-06-02
+- 状況: 全面リニューアル後、旧テーマ(css/js/scss/vendor/gulpfile/package*.json)をルートに残置したまま `public/` を追加した
+- 失敗: ルートが散らかり、未使用の `package-lock.json` が GitHub Dependabot アラートを大量発生させ続けた（axios/lodash/minimatch 等の旧 transitive 脆弱性）
+- ルール: 構成を刷新したら**同じ変更の中で**旧資産を `old/` へ退避する（削除せず版管理下に残す）。使わない `package.json`/`package-lock.json` は追跡から外す（必要ならディスクに残し `.gitignore`）。アラートは default ブランチに反映されて初めて消えると覚えておく。

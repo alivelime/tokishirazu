@@ -11,7 +11,8 @@
 
 ## 進行中
 
-- **次セッション: 内容のブラッシュアップ**（コピー・具体性・画像がプレースホルダ／一般論寄り）。手直しリスト → `docs/content-brushup-todo.md`。
+- **ルート整理＋Dependabot対処済（未merge）**: 旧テーマ資産を `old/` へ退避、未使用の `package.json`/`package-lock.json` を非追跡化。ブランチ `chore/cleanup-root-and-deps`・コミット `ea06d9b`。**master へ merge/push すると Dependabot アラートが解消**（push は人間承認待ち）。
+- **次セッション: 内容のブラッシュアップ**（コピー・具体性・画像がプレースホルダ／一般論寄り）。手直しリスト → `docs/content-brushup-todo.md`。**ブランド/デザイン方針はユーザーが別途まとめる**。
 
 ## ブロッカー / 保留
 
