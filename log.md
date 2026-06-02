@@ -19,3 +19,5 @@
 - 検証: `python3 -m http.server` ＋ Playwright で主要7ページを表示確認、GA4 の `gtag/js?id=G-6KC04Q4EE3` 読み込みと `page_view` 送信(tid一致)を確認。モバイル(390px)のナビ/レイアウトも確認。
 - 公開サイトファイルのみ master へ commit/push（`193e348`）→ Cloudflare Pages 自動デプロイ、本番 `https://www.tokishirazu.llc/` の新ビルド反映と GA4 発火（本番URLで page_view）を確認。内部ドキュメントは公開配信を避けるため未コミット（untracked）にしていた。
 - 内部ドキュメントの扱いをユーザーに確認 → 「公開をサブディレクトリに限定」を選択。公開ファイルを `public/` に集約（`git mv` 33件、コミット `df9f773`、**未push**）。ローカルで public/ をルート配信して全ページ200を確認。**有効化には Cloudflare の Build output directory=`public` 設定が必要**（人手）。設定→push の順で実施予定。設定後はルートの内部ドキュメントを git 管理下に置いても非公開。
+- ユーザーが Cloudflare の出力ディレクトリを `public` に設定し push 完了（origin/master=`d7af0b3`）。本番検証: トップ200・新ビルド、内部資料（media_site_plan/STATUS/CLAUDE/log/decisions/.claude）すべて404＝非公開、アセット200。公開構成 確定。
+- 次セッションの方針: 内容ブラッシュアップ（コピー/具体性/画像が一般論寄り）。手直しリストを `docs/content-brushup-todo.md` に作成、ミッション `2026-0602-content-brushup` を起票。

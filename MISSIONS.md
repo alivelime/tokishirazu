@@ -11,7 +11,7 @@
 
 ## active
 
-- （アクティブなミッションなし。直近完了は `journal/missions_archive.md` 参照）
+- **2026-0602-content-brushup** 内容のブラッシュアップ — リニューアルで立てた枠組みのコピー・具体性・画像を質的に改善。手直しリスト `docs/content-brushup-todo.md`。未着手。
 
 <!-- 例:
 - **2026-0531-setup-harness** ハーネス初期化 — settings/hooks 設置済み、検証待ち
