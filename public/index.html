@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>合同会社ときしらず｜先端技術の受託開発と、生成AIによる映像制作</title>
-  <meta name="description" content="Web黎明期からリアルタイム映像配信の最前線を渡ってきたエンジニアが営む会社。WebTransportなど先端技術の受託開発と、生成AIによる映像制作を手がけています。">
+  <title>合同会社ときしらず｜生成AI映像のフロンティアを歩く</title>
+  <meta name="description" content="WebRTC・WebTransport・メタバース——波が来るたび最前線にいた技術者が、いま生成AI映像のフロンティアを自分の手で歩いています。作ったもの・道具・分かったことの足跡を、ここに。同じ方角へ行く人へ。">
   <link rel="canonical" href="https://www.tokishirazu.llc/">
   <meta name="google-site-verification" content="OO0aOj4eu1PyNChRtH2GlnQR1BNzZrjvZrpshTTgTGk" />
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="合同会社ときしらず">
-  <meta property="og:title" content="合同会社ときしらず｜先端技術の受託開発と、生成AIによる映像制作">
-  <meta property="og:description" content="Web黎明期からリアルタイム映像配信の最前線を渡ってきたエンジニアが営む会社。先端技術の受託開発と、生成AIによる映像制作。">
+  <meta property="og:title" content="合同会社ときしらず｜生成AI映像のフロンティアを歩く">
+  <meta property="og:description" content="波が来るたび最前線にいた技術者が、いま生成AI映像のフロンティアを自分の手で歩いています。その足跡を干す場所。同じ方角へ行く人へ。">
   <meta property="og:url" content="https://www.tokishirazu.llc/">
   <meta property="og:image" content="https://www.tokishirazu.llc/img/header-bg.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -34,9 +34,9 @@
       </a>
       <button class="nav-toggle" aria-label="メニューを開閉" aria-controls="nav-links" aria-expanded="false"><span></span></button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#business">事業</a></li>
-        <li><a href="#works">実績</a></li>
-        <li><a href="/media/">メディア</a></li>
+        <li><a href="#now">いま</a></li>
+        <li><a href="#works">足跡</a></li>
+        <li><a href="#together">できること</a></li>
         <li><a href="/company/">会社概要</a></li>
         <li><a href="/contact/" class="btn btn--primary">お問い合わせ</a></li>
       </ul>
@@ -45,137 +45,114 @@
 
   <main id="main">
 
-    <!-- Hero -->
+    <!-- Hero — 詩ではなく、いま歩いている場所を一行で -->
     <section class="hero hero--photo">
       <div class="container hero__inner">
         <span class="eyebrow">Tokishirazu LLC</span>
-        <h1>深い水を、自分の時間で、<br>光の射すほうへ。</h1>
+        <h1>いま、生成AI映像の<br>フロンティアを歩いています。</h1>
         <p class="lead">
-          Web黎明期から、リアルタイム映像配信の最前線を渡ってきました。
-          先端技術の受託開発と、生成AIによる映像制作の会社です。
+          波が来るたび最前線にいた技術者が、いま自分の手で映像をつくっています。
+          作ったもの・道具・分かったことの足跡を、ここに置いています。同じ方角へ行く人へ。
         </p>
         <div class="btn-row">
-          <a class="btn btn--primary btn--lg" href="/contact/">開発のご相談</a>
-          <a class="btn btn--ghost btn--lg" href="#works">これまでの仕事を見る</a>
+          <a class="btn btn--primary btn--lg" href="/contact/">声をかける</a>
+          <a class="btn btn--ghost btn--lg" href="#now">足跡を見る</a>
         </div>
       </div>
     </section>
 
-    <!-- 何をしてきたか -->
-    <section class="section" id="works">
+    <!-- いま歩いているフロンティア（現に動いている足跡） -->
+    <section class="section" id="now">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Frontier</span>
+          <h2>いま歩いているフロンティア</h2>
+          <p class="lead muted">
+            いま歩いているのは、生成AIによる映像。最新のモデルを片っ端から自分の手で試し、作り、作り替えています。机上の評論ではなく、現に動いている足跡です。
+          </p>
+        </div>
+        <div class="grid grid-3">
+          <div class="card">
+            <span class="badge">制作・検証</span>
+            <h3 class="mt-0" style="margin-top:.9rem">生成AIでの映像制作</h3>
+            <p class="muted">Kling・Seedance（動画生成）、Nano Banana Pro（画像生成）などを使って実際に映像をつくり、「効く作り方」を検証して蓄積しています。</p>
+          </div>
+          <div class="card">
+            <span class="badge">公開リポジトリ</span>
+            <h3 class="mt-0" style="margin-top:.9rem">movie_digest</h3>
+            <p class="muted">気になる映像をショット単位に分解し、その演出を調べ、生成AIで自分なりに作り直すための道具。気になったシーンを、自分の手で再現できるようにする実験場です。</p>
+          </div>
+          <div class="card">
+            <span class="badge">公開リポジトリ</span>
+            <h3 class="mt-0" style="margin-top:.9rem">gen_earth</h3>
+            <p class="muted">SimEarth のような「歩き回れる世界」を、生成で少しずつ育てていく長期プロジェクト。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- これまでの足跡（経歴は「だからいま作れる」へ折り返す） -->
+    <section class="section section--dark" id="works">
       <div class="container narrow">
         <div class="section__head">
           <span class="eyebrow">Track record</span>
-          <h2>何をしてきたか</h2>
+          <h2>これまでの足跡</h2>
         </div>
         <p>
-          二十年あまり、Webの最前線で映像を「届ける」仕組みをつくってきました。WebRTC、そしてWebTransport——ブラウザでリアルタイムに映像を流すための技術が、まだ言葉として固まっていない時期から、その実装の現場にいました。波が来るたびに、その最前線で手を動かしてきた。
+          二十年、新しい技術が「使えるもの」になる、その最前線に毎回いました。先に着いて動くものを作り、その足跡を見た人が「この技術で何か作りたい」と向こうから訪ねてくる——ずっとそうやって来ました。だからいま、生成AIという新しい地形でも、同じ手でまた作れます。
         </p>
-        <p class="muted">その積み重ねは、近年も具体的な仕事になっています。</p>
         <ul class="record">
-          <li><span class="year">2025</span><span class="what">動画生成AIエージェントの開発</span></li>
-          <li><span class="year">2025</span><span class="what">キャラクターとのリアルタイムAIチャットの開発</span></li>
-          <li><span class="year">2024</span><span class="what">日本放送協会（NHK）様 — WebTransport を活用したボリュメトリックプレイヤーの開発</span></li>
-          <li><span class="year">2024</span><span class="what">AI を活用した 3Dアバターの開発</span></li>
+          <li><span class="year"></span><span class="what">ブラウザでリアルタイムに映像を流す技術（WebRTC・WebTransport）を、言葉として固まる前から実装してきた</span></li>
+          <li><span class="year"></span><span class="what">ウェビナー配信基盤の WebRTC リファクタリング、ライブ配信基盤での WebTransport の研究開発</span></li>
+          <li><span class="year">2023</span><span class="what">大型チャリティ番組のメタバース会場のリアルタイム通信を担当</span></li>
+          <li><span class="year">2024</span><span class="what">公共放送向け WebTransport ボリュメトリックプレイヤーの開発</span></li>
+          <li><span class="year"></span><span class="what">大手プラットフォームの動画配信基盤のリプレース</span></li>
         </ul>
-        <p class="muted" style="margin-top:1.6rem">
-          会社としての歩みは、2018年6月、東京・目黒で合同会社として法人化したところから。扱ってきた技術の射程は、それよりずっと前から続いています。
+        <p style="margin-top:1.6rem">
+          毎回、最初の旗を立てる人ではありません。波に早く乗って、実際に動くものを作る側にいた。
+        </p>
+        <p class="muted" style="margin-bottom:0">
+          法人としての設立は 2018年6月、東京・目黒。代表個人の技術キャリアは、それより前から続いています。
         </p>
       </div>
     </section>
 
-    <!-- いま、どこへ向かっているか -->
-    <section class="section section--dark">
+    <!-- ここで一緒にできること / やらないこと（決別でなく線引き） -->
+    <section class="section section--surface" id="together">
       <div class="container narrow">
         <div class="section__head">
-          <span class="eyebrow">Where we're heading</span>
-          <h2>いま、どこへ向かっているか</h2>
+          <span class="eyebrow">Together</span>
+          <h2>ここで一緒にできること</h2>
+          <p class="lead">地図は配りません。一緒に歩きます。</p>
         </div>
         <p>
-          長く「映像を届ける」側の技術をやってきました。その同じ目と手を、いまは「映像を生み出す」側——生成AIによる映像制作と、独立した創作の領域に向けています。
+          生成AI映像をはじめ、新しい技術のフロンティアを一緒に探索します（PoC・リサーチの伴走）。「この技術で何が作れるのか」「どこまでが本物で、どこからが無理か」を、実装まで分かる人間と並んで確かめる。まずは足跡を見て、同じ方角だと感じたら、声をかけてください。
         </p>
-        <p>
-          配信基盤をつくるために身につけた、新しい技術が実用に届く瞬間を見極める勘。それは、生成AIで映像をつくる現在の地形でもそのまま効きます。下地が変わっただけで、見ている対象は地続きです。先端領域の受託開発はいまも現役の仕事として続けながら、その隣で、生成AIを使った映像と、自分の手による作品づくりへと重心を移しつつあります。
-        </p>
-        <p style="margin-bottom:0"><strong>捨ててきたものは、何もありません。これまで積んだものを、次の地形へ持ち越しています。</strong></p>
-      </div>
-    </section>
 
-    <!-- 何を頼めるか -->
-    <section class="section section--surface" id="business">
-      <div class="container narrow">
-        <div class="section__head">
-          <span class="eyebrow">Services</span>
-          <h2>何を頼めるか</h2>
-          <p class="lead">新しい技術が「使える形」になる手前のところを、現場の手で埋める。それが得意分野です。</p>
+        <div class="aside">
+          <h4 class="mt-0">ここでやらないこと</h4>
+          <ul class="muted" style="margin-bottom:.6rem">
+            <li>仕様を渡されて時間で実行する受託開発</li>
+            <li>ビジネス向けの生成AI導入支援・コンサルティング</li>
+            <li>動画制作の請負</li>
+          </ul>
+          <p class="muted" style="margin-bottom:0">「やめた」のではなく、ここで差し出すのが別の種類の仕事だから、という線引きです。</p>
         </div>
-        <div class="offering">
-          <span class="offering__no">01</span>
-          <div>
-            <h3>PoCラボサービス</h3>
-            <p>気になる技術や機能はあるのに、検証する手が足りない。その技術検証を代行します。要件が固まっていなくても構いません。</p>
-          </div>
-        </div>
-        <div class="offering">
-          <span class="offering__no">02</span>
-          <div>
-            <h3>技術コンサルティング</h3>
-            <p>「取り入れたいが進まない」「開発会社を早さや安さで選んで後悔したくない」。業界歴15年超の現役エンジニアが、導入判断と落とし穴の回避を支援します。</p>
-          </div>
-        </div>
-        <div class="offering">
-          <span class="offering__no">03</span>
-          <div>
-            <h3>リアルタイム動画配信</h3>
-            <p>WebTransport を活用した次世代の動画配信システム開発。アプリ不要で手軽にスケールする配信基盤を構築します。</p>
-          </div>
-        </div>
-        <div class="offering">
-          <span class="offering__no">04</span>
-          <div>
-            <h3>生成AIの実装支援</h3>
-            <p>動画生成AIエージェントやリアルタイムAIチャットなど、生成AIをプロダクトに組み込むための設計・開発を行います。</p>
-          </div>
-        </div>
+
         <div class="btn-row" style="margin-top:2.2rem">
-          <a class="btn btn--primary" href="/contact/">開発のご相談</a>
+          <a class="btn btn--primary" href="/contact/">声をかける</a>
         </div>
       </div>
     </section>
 
-    <!-- メディア導線 -->
+    <!-- 会社のこと -->
     <section class="section">
-      <div class="container">
-        <div class="grid grid-2" style="align-items:center; gap:2.8rem">
-          <div>
-            <span class="eyebrow">Media</span>
-            <h2>中小企業のための、実務メディア</h2>
-            <p class="muted">
-              AI活用や動画広告の内製化など、中小企業の現場で実際に役立つテーマを、技術者の視点で掘り下げます。
-              特定の製品を売り込むのではなく、判断に必要な事実と考え方を整理してお届けします。
-            </p>
-            <div class="btn-row">
-              <a class="btn btn--ghost" href="/media/">メディアを見る</a>
-            </div>
-          </div>
-          <a class="card card--link" href="/media/articles/video-ad-inhouse-guide/">
-            <span class="badge">入門ガイド</span>
-            <h3 class="mt-0" style="margin-top:.9rem">中小企業のための動画広告 内製化入門</h3>
-            <p class="muted">外注に頼り切らず、AIを使って“動画を作れる体制”を社内につくるための最初の一歩を整理しました。</p>
-            <p class="muted" style="color:var(--okibi-ink); font-weight:700; margin-bottom:0">記事を読む →</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 会社概要への導線 -->
-    <section class="section section--surface">
       <div class="container narrow">
         <span class="eyebrow">Company</span>
         <h2>会社のこと</h2>
         <p class="lead muted">
           合同会社ときしらず。2018年、東京・目黒で法人化しました。
-          先端技術の開発と、そこで得た知見を活かした情報発信を続けています。
+          代表個人の技術キャリアは、それより前から続いています。
         </p>
         <div class="btn-row">
           <a class="btn btn--ghost btn--lg" href="/company/">会社概要を見る</a>
@@ -193,13 +170,12 @@
             <img src="/img/logo02.svg" alt="" aria-hidden="true">
             <span>合同会社ときしらず<small>TOKISHIRAZU LLC</small></span>
           </a>
-          <p class="mt-0" style="margin-top:1rem; max-width:34ch">先端技術の受託開発と、生成AIによる映像制作。Web黎明期から、映像の最前線で。</p>
+          <p class="mt-0" style="margin-top:1rem; max-width:34ch">生成AI映像のフロンティアを歩く。その足跡を、ここに干しています。</p>
         </div>
         <div>
           <h5>サイト</h5>
           <ul>
             <li><a href="/">ホーム</a></li>
-            <li><a href="/media/">メディア</a></li>
             <li><a href="/company/">会社概要</a></li>
             <li><a href="/contact/">お問い合わせ</a></li>
           </ul>

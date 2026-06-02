@@ -251,6 +251,10 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .section--dark a { color: var(--okibi); }
 .section--dark .btn--ghost { color: var(--washi); border-color: var(--line-on-dark); }
 .section--dark .btn--ghost:hover { border-color: var(--washi); }
+/* 暗面では実績リストの本文・罫を明色へ（既定の墨色は暗面で読めない） */
+.section--dark .record .what { color: rgba(245, 241, 232, .9); }
+.section--dark .record li,
+.section--dark .record li:first-child { border-color: var(--line-on-dark); }
 
 /* ---- Cards ------------------------------------------------------------ */
 .card {
@@ -286,6 +290,16 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .offering h3 { font-size: var(--step-1); margin-bottom: .4rem; }
 .offering p { margin: 0; color: var(--ink-soft); }
 @media (max-width: 600px) { .offering { grid-template-columns: 1fr; gap: .4rem; } }
+
+/* ---- Aside（線引き等、静かに引っ込めて見せる箱。熾火は使わない） ------ */
+.aside {
+  margin: 2rem 0 0; padding: 1.4rem 1.6rem;
+  border: 1px solid var(--line); border-left: 3px solid var(--nibi);
+  border-radius: 0 var(--radius) var(--radius) 0; background: transparent;
+}
+.aside h4 { font-size: var(--step-0); color: var(--ink-soft); margin-bottom: .6rem; }
+.aside ul { padding-left: 1.2em; }
+.aside li { margin: .25em 0; }
 
 /* ---- Track record (実績) --------------------------------------------- */
 .record { list-style: none; margin: 0; padding: 0; }
