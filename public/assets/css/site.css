@@ -274,6 +274,11 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .card p:last-child { margin-bottom: 0; }
 .card p { color: var(--ink-soft); }
 
+.card__mark {
+  width: 76px; height: 76px; object-fit: contain; flex: none;
+  margin: 0 0 1.1rem;
+}
+
 /* mono の連番（旧 .card__icon の置き換え。絵文字アイコンは使わない） */
 .card__index {
   font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500;
