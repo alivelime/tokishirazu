@@ -19,7 +19,7 @@
 
 ## ブロッカー / 保留
 
-- **画像**: 新規画像は未作成（プレースホルダ＋既存流用）。Codex で生成 → `docs/image-tasks.md` のタスク参照。
+- **画像**: P1 ブランドOGP（`img/og/ogp-default.png`）・P2 #now の墨スポット3点（`img/now/mark-*.png`）を Codex 生成・配線・調整済み（2026-06-03）。残るは P3＝自社メディア柱記事のアイキャッチ（柱記事作成時に着手）。`docs/image-tasks.md` 参照。
 - **実案件LP・アフィリンク**: A8.net 案件調査の確定待ち（現状はサンプルLPのみ、外部リンクなし）。
 - **問い合わせフォーム**: 当面メール案内。将来 Cloudflare Pages Functions でフォーム化を検討。
 
