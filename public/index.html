@@ -51,8 +51,8 @@
         <span class="eyebrow">Tokishirazu LLC</span>
         <h1>いま、生成AI映像の<br>フロンティアを歩いています。</h1>
         <p class="lead">
-          波が来るたび最前線にいた技術者が、いま自分の手で映像をつくっています。
-          作ったもの・道具・分かったことの足跡を、ここに置いています。同じ方角へ行く人へ。
+          波が来るたび最前線にいた技術者が、いま生成AIで映像をつくるための道具を、自分の手で組んでいます。
+          作ったもの・分かったことの足跡を、ここに置いています。同じ方角へ行く人へ。
         </p>
         <div class="btn-row">
           <a class="btn btn--primary btn--lg" href="/contact/">声をかける</a>
@@ -68,24 +68,36 @@
           <span class="eyebrow">Frontier</span>
           <h2>いま歩いているフロンティア</h2>
           <p class="lead muted">
-            いま歩いているのは、生成AIによる映像。最新のモデルを片っ端から自分の手で試し、作り、作り替えています。机上の評論ではなく、現に動いている足跡です。
+            いま組んでいるのは、生成AIで映像をつくるための「道具そのもの」。映像を一本納品するのがゴールではありません。狙っているのは、作りながら学習し続けるAIハーネス——作品の世界観・登場アセット・効くカメラワークまでを溜め込み、使うほど勘どころが効いてくる作業環境を、いま組んでいる最中です。
           </p>
         </div>
+
+        <!-- 正直に書く（派手なGUIはない） — 3カラムの単調を破る静かな自白 -->
+        <div class="note-honest">
+          <span class="note-honest__label">正直に書くと</span>
+          <p class="mt-0" style="margin-bottom:0">
+            Higgsfield の Cinema Studio や Figma の Weave のような、見栄えのするGUIはこちらにはありません。主戦場は Claude Code の上で淡々と動かす方で、見た目は地味です。だけど「派手なボタンの裏で、実際に何が起きているか」を自分の手で組んで検証し、作り替えている——足跡はそこにあります。
+          </p>
+        </div>
+
         <div class="grid grid-3">
           <div class="card">
-            <span class="badge">制作・検証</span>
-            <h3 class="mt-0" style="margin-top:.9rem">生成AIでの映像制作</h3>
-            <p class="muted">Kling・Seedance（動画生成）、Nano Banana Pro（画像生成）などを使って実際に映像をつくり、「効く作り方」を検証して蓄積しています。</p>
+            <span class="card__index">01</span>
+            <h3 class="mt-0">動画生成AIの「効く作り方」を検証して公開</h3>
+            <p class="muted">Kling 3.0／Seedance 2.0 などで、カメラワーク・アングル・演技（セリフと関係性だけでどこまで芝居が成立するか）を実験し、分かったことを一つずつ記事にしています。画像生成は Nano Banana Pro。</p>
+            <p class="card__repo"><a class="link-mono" href="https://note.com/eto_shingo" rel="noopener" target="_blank">note で検証ログを読む →</a></p>
           </div>
           <div class="card">
-            <span class="badge">公開リポジトリ</span>
-            <h3 class="mt-0" style="margin-top:.9rem">movie_digest</h3>
-            <p class="muted">気になる映像をショット単位に分解し、その演出を調べ、生成AIで自分なりに作り直すための道具。気になったシーンを、自分の手で再現できるようにする実験場です。</p>
+            <span class="card__index">02</span>
+            <h3 class="mt-0">映像をショット分解して作り直すハーネス</h3>
+            <p class="muted">気になった映像をショット単位に割り、その演出を調べ、生成AIで自分なりに組み直す道具。「あのシーンを、自分の手で再現できるようになる」ための実験場であり、上で言う“学習し続けるハーネス”の実物です。</p>
+            <p class="card__repo"><span class="repo">公開リポジトリ</span> <code>movie_digest</code></p>
           </div>
           <div class="card">
-            <span class="badge">公開リポジトリ</span>
-            <h3 class="mt-0" style="margin-top:.9rem">gen_earth</h3>
+            <span class="card__index">03</span>
+            <h3 class="mt-0">歩き回れる世界を生成で育てる</h3>
             <p class="muted">SimEarth のような「歩き回れる世界」を、生成で少しずつ育てていく長期プロジェクト。</p>
+            <p class="card__repo"><span class="repo">公開リポジトリ</span> <code>gen_earth</code></p>
           </div>
         </div>
       </div>
@@ -123,10 +135,10 @@
         <div class="section__head">
           <span class="eyebrow">Together</span>
           <h2>ここで一緒にできること</h2>
-          <p class="lead">地図は配りません。一緒に歩きます。</p>
+          <p class="lead">「これ、作れるか一緒に確かめよう」——そこから先を、一緒に歩きます。</p>
         </div>
         <p>
-          生成AI映像をはじめ、新しい技術のフロンティアを一緒に探索します（PoC・リサーチの伴走）。「この技術で何が作れるのか」「どこまでが本物で、どこからが無理か」を、実装まで分かる人間と並んで確かめる。まずは足跡を見て、同じ方角だと感じたら、声をかけてください。
+          生成AI映像をはじめ、新しい技術のフロンティアを一緒に探索します（PoC・リサーチの伴走）。たとえば「この生成AIで、うちのこれは作れるのか。期間を区切って見極めたい」——そういう相談から、実装まで分かる人間と並んで確かめていきます。仕様を渡されて時間で実行する受託ではなく、まだ誰も作り方を知らないものを、一緒に確かめる仕事です。まずは足跡を見て、同じ方角だと感じたら、声をかけてください。
         </p>
 
         <div class="aside">
@@ -171,6 +183,7 @@
             <span>合同会社ときしらず<small>TOKISHIRAZU LLC</small></span>
           </a>
           <p class="mt-0" style="margin-top:1rem; max-width:34ch">生成AI映像のフロンティアを歩く。その足跡を、ここに干しています。</p>
+          <p class="mt-0" style="margin-top:.7rem"><a href="https://note.com/eto_shingo" rel="noopener" target="_blank">note（流れる足跡）→</a></p>
         </div>
         <div>
           <h5>サイト</h5>

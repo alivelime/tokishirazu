@@ -1,7 +1,7 @@
 /* =========================================================================
    tokishirazu.llc — design system
    Plain static CSS (no build).
-   芯: 「深い水を、自分の時間で、光の射すほうへ、一歩ずつ昇る」。
+   芯: 「足跡を干す、後発開拓者」。詩で語らず、作ったもの（足跡）で語る。
    和紙白＋墨の静かな面を主役に、墨紺の暗面を沈め、熾火アンバーを点で灯す。
    配分の規律: 和紙白+墨 ≒70% / 墨紺・淵ティールの暗面 ≒22% / 熾火 ≦8%。
    ========================================================================= */
@@ -216,9 +216,13 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 }
 .hero--photo::after {
   content: ""; position: absolute; inset: 0; z-index: -1;
+  /* モノクロの微細グレインを最上層に薄く重ね、アナログの温度を残す（テック発光は足さない） */
   background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E"),
     linear-gradient(180deg, rgba(0, 31, 60, .30) 0%, rgba(0, 31, 60, .42) 48%, rgba(0, 23, 46, .9) 100%),
     linear-gradient(90deg, rgba(0, 23, 46, .78) 0%, rgba(0, 31, 60, .25) 55%, transparent 100%);
+  background-size: 160px 160px, cover, cover;
+  background-repeat: repeat, no-repeat, no-repeat;
 }
 .hero--photo .hero__inner {
   display: flex; flex-direction: column; justify-content: flex-end;
@@ -258,6 +262,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 
 /* ---- Cards ------------------------------------------------------------ */
 .card {
+  display: flex; flex-direction: column;
   background: var(--washi);
   border: 1px solid var(--line); border-radius: var(--radius);
   padding: 1.8rem; box-shadow: none;
@@ -273,6 +278,31 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .card__index {
   font-family: var(--font-mono); font-size: var(--step--1); font-weight: 500;
   letter-spacing: .12em; color: var(--okibi-ink); margin-bottom: 1rem; display: block;
+}
+
+/* カード脚注: 公開リポジトリ名や外部リンクを mono で控えめに添える */
+.card__repo { margin: 0; margin-top: auto; padding-top: 1.3rem; font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: .03em; }
+.card__repo .repo { color: var(--nibi); }
+.card__repo code {
+  font-family: var(--font-mono); color: var(--ink-soft); background: var(--washi-2);
+  padding: .12em .5em; border-radius: var(--radius-sm); border: 1px solid var(--line);
+}
+.section--surface .card__repo code { background: var(--washi); }
+
+/* 正直な自白の一節（3カラムの単調を破る、静かな editorial ブロック） */
+.note-honest {
+  max-width: 66ch; margin: 0 0 2.6rem; padding-left: 1.4rem;
+  border-left: 2px solid var(--line-strong); color: var(--ink-soft);
+}
+.note-honest__label {
+  display: block; font-family: var(--font-mono); font-size: var(--step--1);
+  letter-spacing: .14em; color: var(--nibi); margin-bottom: .55rem;
+}
+
+/* mono の小さな外部リンク（note 等への導線） */
+.link-mono {
+  font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: .03em;
+  color: var(--okibi-ink);
 }
 /* 旧 .card__icon が残っていても破綻させない（控えめな mono ラベル化） */
 .card__icon {
