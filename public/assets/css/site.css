@@ -289,6 +289,20 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 }
 .section--surface .card__repo code { background: var(--washi); }
 
+/* note 記事カード: アイキャッチ＋公開日＋タイトル */
+.card__thumb {
+  margin: -1.8rem -1.8rem 1.2rem; width: calc(100% + 3.6rem); max-width: none;
+  aspect-ratio: 800 / 419; object-fit: cover;
+  border-radius: var(--radius) var(--radius) 0 0; border-bottom: 1px solid var(--line);
+  background: var(--washi-2);
+}
+.card__date {
+  display: block; font-family: var(--font-mono); font-size: var(--step--1);
+  letter-spacing: .04em; color: var(--nibi); margin-bottom: .5rem;
+}
+.card--note { overflow: hidden; }
+.card--note h3 { font-size: var(--step-1); line-height: 1.5; }
+
 /* 正直な自白の一節（3カラムの単調を破る、静かな editorial ブロック） */
 .note-honest {
   max-width: 66ch; margin: 0 0 2.6rem; padding-left: 1.4rem;
