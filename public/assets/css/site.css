@@ -308,6 +308,10 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 .card--note { overflow: hidden; }
 .card--note h3 { font-size: var(--step-1); line-height: 1.5; }
 
+/* メディア記事カード（自社の柱記事。note カードと同じ体裁で内部リンク） */
+.card--media { overflow: hidden; }
+.card--media h3 { font-size: var(--step-1); line-height: 1.5; }
+
 /* 正直な自白の一節（3カラムの単調を破る、静かな editorial ブロック） */
 .note-honest {
   max-width: 66ch; margin: 0 0 2.6rem; padding-left: 1.4rem;
@@ -389,6 +393,8 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
 
 /* ---- Article (prose) -------------------------------------------------- */
 .article { padding-block: clamp(2.5rem, 2rem + 3vw, 4.5rem); }
+.article__hero { max-width: var(--container-narrow); margin: 0 auto 2.2rem; }
+.article__hero img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--line); }
 .article__header { max-width: var(--container-narrow); margin-inline: auto; margin-bottom: 2.4rem; }
 .article__meta { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; color: var(--nibi); font-family: var(--font-mono); font-size: var(--step--1); margin-top: 1rem; }
 .prose { max-width: var(--container-narrow); margin-inline: auto; }

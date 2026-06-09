@@ -48,3 +48,30 @@
 
 - 64px だと P2 の `mark-genearth`(等高線)が潰れて"もやっとした丸"に見えたため、`.card__mark` を **64px→76px** に調整（CSS 1行）。03 の小径・等高線、01 の中心の熾火点が読めるようになったのを Playwright で確認。
 - `docs/image-tasks.md` の P1/P2 を**完了反映**（実ファイルパス・調整理由を追記、§0 在庫表にも追加）。P3（自社メディア柱記事のアイキャッチ）は柱記事作成時まで保留で据え置き。
+
+## 2026-06-09
+
+- **owned-media 柱記事を取り込み・配信実装（R-002, ミッション 2026-0603-own-media-pillar）**。content `260604_genai-journey-timeline/article.md`（status: review）を `docs/owned-media-ingest.md` の手順で取り込み。slug=`genai-journey-timeline`。
+- `public/media/articles/genai-journey-timeline/index.html` を雛形 `video-ad-inhouse-guide` から作成。frontmatter→メタ/canonical/og/ld+json 移植、本文 Markdown→HTML（**本文改変なし**）、3軸年表テーブル＋fig01–03、目次・関連note 3本・相談CTAを配置。
+- 本文図は content の `fig0N.png`（各~2MB）を **cwebp q85 で webp 化**（各~220–330KB）して記事フォルダに同梱、`<img>` は lazy + width/height 指定。Playwright で表示・メタ・図デコード(1600×900)・リンク・console エラー0 を確認。
+- `public/media/index.html` に記事カード追加（badge=視点、新着を先頭）。`public/sitemap.xml` に URL 追加（lastmod 2026-06-09）。
+- **保留（要判断）**: (1) OGP/アイキャッチは P3 未生成のため暫定 `ogp-default.png`。(2) 製品名（Kling/Seedance 等）は A8 案件未確定のためプレーンテキスト維持（notice の「成果報酬リンクなし」も維持）。(3) `/media/` 自体の導線（全体ナビ/トップ）は STATUS 既定方針で据え置き＝ユーザー判断待ち。
+- **未了**: commit / push / 公開URL確定 → R-002 feedback・content status:published・ミッション done のループ閉じはデプロイ後。
+
+- **柱記事アイキャッチを Codex 生成・配線（image-tasks P3）**。`codex exec`（imagegen / gpt-image-2）で §1 ブランド契約のキービジュアルを生成 → `eyecatch.png`(1600×900・249KB)＋派生 `eyecatch.webp`(46KB)。和紙白の地／低く長い熾火アンバーの一線（"閾値"の比喩）／墨の刷毛／明朝「動画生成AIが、閾値を超えた」+ mono「2026.02」。本文図のカラフル路線は不採用（register 別）。
+- 配線3役: 記事 `og:image`/`twitter:image`(png)、記事冒頭ヒーロー `.article__hero`(webp)、トップ新設「メディア」節カードサムネ(webp)。
+- **トップに「メディア」節を新設**（note 節の直後＝流れる足跡→溜まる足跡の対比）。`#media` grid-3 に柱記事カード1枚（最新順、サムネ＝eyecatch.webp）＋「メディアの記事一覧へ」。CSS `.card--media`・`.article__hero` を追加。背景は now(無地)→note(surface)→media(無地)→works(dark) で交互維持。Playwright で表示・サムネ・console エラー0 確認。
+
+- **柱記事の手直し（ユーザーレビュー反映, 2026-06-09）**:
+  - アイキャッチ第2版を Codex 再生成。初版が「渋すぎ＋正方形寄り」だったため **横長シネマ 1600×640（2.5:1）** に変更、墨の刷毛を豊かにし暖色のにじみを足して空きを解消。文字は中央 safe zone。`.article__hero` を aspect 5/2 に、各 width/height を 640 に更新。
+  - 見出し「まず最初に外しておく ── 量産の話ではない」→「**動画量産の話じゃありません**」（独白調をやめる）。HTML(h2+TOC)＋content `article.md`（正本）の両方を同期。
+  - fig01–03 の `loading="lazy"` を除去（下端の図が初期表示で空に見える＝「画像2,3が表示されない」の原因だった。実体は健全）。
+  - CTA を「技術者の視点でご相談に乗ります」→ **謙虚に知見を共有する言い回し**へ（「私がつまずきながら見つけてきた知見で、よければお役に立てるかもしれません」／ボタン「お気軽にどうぞ」）。ブランド声のフィードバックを memory `cta-voice-humble-not-engineer` に記録。
+  - Playwright 再検証: 新ヒーロー/サムネ表示・見出し・CTA・図 eager・console エラー0 を確認。
+
+- **柱記事 手直し 第2ラウンド（2026-06-09）**:
+  - 見出し「動画量産の話じゃありません」→「**バズ動画量産が話題ですが、、**」（いきなり否定を避ける）。HTML(h2+TOC)＋content `article.md` 同期。
+  - **アイキャッチ方針転換**: 記事サムネは装飾の水墨でなく「記事概要が一目で分かるカバー要約」に。**本文図 fig01-03 と同じカラフル解説イラスト調**で Codex 再生成（見出し主役＋2025量産→2026表現の対比＋「プロが使い始めた、表現の道具に。」）。1600×900。ヒーローは 16:9 に戻す。トップのカードサムネで内容が読めるようになった。
+  - 第2版の**水墨バナー（1600×640）は `public/img/banners/sumi-threshold-1600x640.{png,webp}` へ退避**（別ページ用に温存）。image-tasks P3 を第3版＝確定方針に更新。
+  - **CTA を1行化**（コピーライター指示）: genai記事=「作れるか、一緒に確かめませんか。」／ video-ad-inhouse-guide記事=「『作れる体制』づくり、よければ一緒に。」。両方ボタン「お気軽にどうぞ」。説明p撤去。`video-ad-inhouse-guide` の旧「技術者の視点で〜」も解消（リンク非掲載だが修正依頼により対応）。memory `cta-voice-humble-not-engineer` に1行・確定文言を追記。
+  - Playwright 再検証: トップのサムネ可読・記事ヒーロー(16:9)・見出し・両記事CTA・console エラー0。
