@@ -75,3 +75,11 @@
   - 第2版の**水墨バナー（1600×640）は `public/img/banners/sumi-threshold-1600x640.{png,webp}` へ退避**（別ページ用に温存）。image-tasks P3 を第3版＝確定方針に更新。
   - **CTA を1行化**（コピーライター指示）: genai記事=「作れるか、一緒に確かめませんか。」／ video-ad-inhouse-guide記事=「『作れる体制』づくり、よければ一緒に。」。両方ボタン「お気軽にどうぞ」。説明p撤去。`video-ad-inhouse-guide` の旧「技術者の視点で〜」も解消（リンク非掲載だが修正依頼により対応）。memory `cta-voice-humble-not-engineer` に1行・確定文言を追記。
   - Playwright 再検証: トップのサムネ可読・記事ヒーロー(16:9)・見出し・両記事CTA・console エラー0。
+
+- **問い合わせフォーム導入（2026-06-10）**:
+  - 背景: contact ページが生メアド直書き（本文＋mailto×3）＝収集ボットの格好の餌。ユーザー依頼でフォーム化＋独立レビュー（F1対策。general-purpose サブエージェントで方式を批判的に検証）。
+  - 方式決定: AskUserQuestion で「Web3Forms＋自前フォーム / 高め敷居」を選択。レビュー結論=「フォーム化はスパム露出を増やすのでなく**減らす**（住所がHTMLから消える）」。
+  - 実装: `public/contact/index.html` をフォーム化（action=api.web3forms.com、access_key プレースホルダ、honeypot `botcheck`、種類select＝制作代行/丸投げの選択肢を意図的に排除、「いまの状況」textarea 必須 minlength30、consent 文、AJAX送信＋自前 status 表示、JSクリックでメアド生成のフォールバック）。bot 関門は **hCaptcha 無料ゼロ設定**（Web3Forms では Turnstile が PRO のため）。`site.css` に `.form` 一式を既存トークンで追加。
+  - 法務: `public/privacy/index.html` §4 を「アクセス解析・外部サービス」に拡張し Web3Forms / hCaptcha の外部送信を明記、§5 の第三者提供文を委託・海外含みに修正、最終改定2026-06-10。
+  - 検証: Playwright で表示・配線確認。`emailInRenderedDOM:false`（静的HTML/DOMにメアド無し）、フォールバックは click で `eto@…` 生成、captcha未完→自前エラー表示。**設定コメントに実メアドが残る穴を発見し除去→learnings L-004**。
+  - 残: ユーザーが access key 取得→差し替え→本番1通テスト（迷惑メール振り分け確認）。未コミット。

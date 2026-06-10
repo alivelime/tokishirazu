@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="icon" href="/img/logo02.svg" type="image/svg+xml">
   <script src="/assets/js/analytics.js"></script>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へスキップ</a>
@@ -51,26 +52,68 @@
       <div class="container narrow">
         <p class="lead muted">
           生成AI映像をはじめ、新しい技術を「自分たちで作れるようになりたい」方へ。
-          まずは<a href="/#now">作ったもの</a>を見て、同じ方角だと感じたら、以下のメールアドレスまで相談してください。
+          まずは<a href="/#now">作ったもの</a>を見て、同じ方角だと感じたら、下のフォームからご相談ください。
           内製化支援（PoC・リサーチの伴走）など、隣で一緒に立ち上げる形のご相談を歓迎します。
         </p>
 
-        <div class="cta-block">
-          <p class="muted mt-0">メールでのお問い合わせ</p>
-          <p style="font-size:var(--step-2); font-weight:800; margin:.4rem 0 1.4rem">
-            <a href="mailto:eto@tokishirazu.llc?subject=お問い合わせ（tokishirazu.llc）">eto@tokishirazu.llc</a>
-          </p>
-          <a class="btn btn--primary btn--lg" href="mailto:eto@tokishirazu.llc?subject=お問い合わせ（tokishirazu.llc）">メールを作成する</a>
-        </div>
+        <form id="contact-form" class="form" action="https://api.web3forms.com/submit" method="POST">
+          <!-- ▼ 要設定: web3forms.com で送信先メールを登録 → 発行された Access Key を下の value に貼る（メールアドレスはここに書かない） ▼ -->
+          <input type="hidden" name="access_key" value="b1665de7-2c43-4d48-af9d-82b20b449dc5">
+          <input type="hidden" name="subject" value="お問い合わせ（tokishirazu.llc）">
+          <input type="hidden" name="from_name" value="ときしらず お問い合わせフォーム">
+          <!-- honeypot: 人間には見えない。ボットが入力すると弾く -->
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
+
+          <div class="form__row">
+            <label for="cf-name">お名前 <span class="req">必須</span></label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name">
+          </div>
+
+          <div class="form__row">
+            <label for="cf-company">会社・屋号 <span class="opt">任意</span></label>
+            <input id="cf-company" name="company" type="text" autocomplete="organization">
+          </div>
+
+          <div class="form__row">
+            <label for="cf-email">メールアドレス <span class="req">必須</span></label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email" inputmode="email">
+          </div>
+
+          <div class="form__row">
+            <label for="cf-topic">ご相談の種類 <span class="req">必須</span></label>
+            <select id="cf-topic" name="topic" required>
+              <option value="" disabled selected>選んでください</option>
+              <option>内製化支援（PoC・リサーチの伴走）の相談</option>
+              <option>一緒に作れるか確かめたい（技術検証から）</option>
+              <option>メディア・記事についての問い合わせ</option>
+              <option>取材・登壇・その他</option>
+            </select>
+          </div>
+
+          <div class="form__row">
+            <label for="cf-message">何を一緒に立ち上げたいか／いまの状況 <span class="req">必須</span></label>
+            <textarea id="cf-message" name="message" rows="7" required minlength="30"
+              placeholder="例：いま外注している◯◯を、自分たちの手で回せるようにしたい。一度試したが△△で詰まっている——など、状況をできるだけ具体的に書いてください。"></textarea>
+            <p class="form__hint">「◯◯を作ってほしい」という“丸投げ”のご依頼ではなく、<a href="/#together">作れる力を相手の中に残す</a>かたちのご相談を歓迎しています。状況が具体的なほど、お役に立てるか正直にお返事できます。</p>
+          </div>
+
+          <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
+
+          <p class="form__consent muted">送信をもって、<a href="/privacy/">プライバシーポリシー</a>に同意いただいたものとみなします。</p>
+
+          <button type="submit" class="btn btn--primary btn--lg form__submit">相談する</button>
+
+          <p class="form__status" role="status" aria-live="polite" hidden></p>
+        </form>
 
         <div class="notice">
-          <p class="mt-0"><strong>お問い合わせの際のお願い</strong></p>
-          <ul style="margin-bottom:0">
-            <li>どんなことを一緒に立ち上げたいか、差し支えなければ会社名・お名前をご記入ください。</li>
+          <ul style="margin:0">
             <li>内容によっては、回答までにお時間をいただく場合があります。</li>
             <li>いただいた個人情報の取り扱いは<a href="/privacy/">プライバシーポリシー</a>に従います。</li>
           </ul>
         </div>
+
+        <p class="form__fallback muted">フォームがうまく動かないときは、<button type="button" class="link-reveal" data-mail-reveal>メールアドレスを表示</button>してご連絡ください。</p>
       </div>
     </section>
   </main>
@@ -110,5 +153,59 @@
   </footer>
 
   <script src="/assets/js/site.js" defer></script>
+  <script>
+    (function () {
+      var form = document.getElementById("contact-form");
+      if (form) {
+        var statusEl = form.querySelector(".form__status");
+        var submitBtn = form.querySelector(".form__submit");
+        var setStatus = function (msg, kind) {
+          statusEl.hidden = false;
+          statusEl.textContent = msg;
+          statusEl.className = "form__status" + (kind ? " form__status--" + kind : "");
+        };
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          var cap = form.querySelector('textarea[name="h-captcha-response"]');
+          if (!cap || !cap.value) {
+            setStatus("「私はロボットではありません」の確認を完了してください。", "error");
+            return;
+          }
+          submitBtn.disabled = true;
+          setStatus("送信しています…", "");
+          fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: new FormData(form),
+            headers: { "Accept": "application/json" }
+          })
+            .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+            .then(function (res) {
+              submitBtn.disabled = false;
+              if (res.ok && res.j && res.j.success) {
+                form.reset();
+                if (window.hcaptcha) { try { window.hcaptcha.reset(); } catch (err) {} }
+                setStatus("送信しました。内容を確認のうえ、折り返しご連絡します。お時間をいただく場合があります。", "ok");
+              } else {
+                setStatus((res.j && res.j.message) || "送信に失敗しました。お手数ですが、時間をおいて再度お試しください。", "error");
+              }
+            })
+            .catch(function () {
+              submitBtn.disabled = false;
+              setStatus("送信に失敗しました。通信環境をご確認のうえ、再度お試しください。", "error");
+            });
+        });
+      }
+      var reveal = document.querySelector("[data-mail-reveal]");
+      if (reveal) {
+        reveal.addEventListener("click", function () {
+          var addr = "eto" + "@" + "tokishirazu.llc";
+          var a = document.createElement("a");
+          a.href = "mailto:" + addr + "?subject=" + encodeURIComponent("お問い合わせ（tokishirazu.llc）");
+          a.textContent = addr;
+          reveal.parentNode.replaceChild(a, reveal);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
