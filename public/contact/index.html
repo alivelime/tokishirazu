@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="/assets/css/site.css">
   <link rel="icon" href="/img/logo02.svg" type="image/svg+xml">
   <script src="/assets/js/analytics.js"></script>
-  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">本文へスキップ</a>
@@ -97,7 +96,7 @@
             <p class="form__hint">「◯◯を作ってほしい」という“丸投げ”のご依頼ではなく、<a href="/#together">作れる力を相手の中に残す</a>かたちのご相談を歓迎しています。状況が具体的なほど、お役に立てるか正直にお返事できます。</p>
           </div>
 
-          <div class="h-captcha" data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"></div>
+          <div class="h-captcha" data-captcha="true"></div>
 
           <p class="form__consent muted">送信をもって、<a href="/privacy/">プライバシーポリシー</a>に同意いただいたものとみなします。</p>
 
@@ -207,5 +206,7 @@
       }
     })();
   </script>
+  <!-- Web3Forms hCaptcha 用クライアント。data-captcha="true" の div を走査して描画するため、フォームより後（body末尾）に置く -->
+  <script src="https://web3forms.com/client/script.js" defer></script>
 </body>
 </html>
