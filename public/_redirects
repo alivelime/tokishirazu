@@ -1,1 +1,2 @@
-https://tokishirazu.llc/* https://www.tokishirazu.llc/:splat 301
+# Cloudflare Pages path-based redirects
+# Domain-level redirect (non-www → www) is handled via Cloudflare Dashboard Redirect Rules
